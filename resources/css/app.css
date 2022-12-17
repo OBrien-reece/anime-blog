@@ -1,0 +1,134 @@
+.wrapper {
+    position: relative;
+}
+
+/*on hover active links*/
+.navLink:hover {
+    color: red;
+}
+
+/* Left Centered text */
+.left-centered {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    margin-top: 120px;
+}
+
+/*background image*/
+.background-img {
+    max-width: 100%;
+    height: 80%;
+    display: block;
+}
+
+/*9Anime text purple*/
+.anime-text {
+    color: purple;
+}
+
+/*!*background image text*!*/
+/*.image-text {*/
+/*    background-color: white;*/
+/*}*/
+
+/*image card 1*/
+.image-card-1 {
+    width: 350px;
+    bottom: 150px;
+    /*left: -2px;*/
+}
+
+/*image card 2*/
+.image-card-2 {
+    width: 350px;
+    bottom: 150px;
+    left: 384px;
+}
+
+/*image card 3*/
+.image-card-3 {
+    width: 350px;
+    bottom: 150px;
+    left: 767px;
+}
+
+/*jumbotron card change bg color*/
+.jumbotron-card {
+    background-color: #cbd5e0;
+    border-radius: 4px;
+}
+
+/*hr element 1 adjust widht*/
+.hr-element-1 {
+    width: 94%;
+    margin:0 auto;
+}
+
+/*hr element 2 adjust width*/
+.hr-element-2 {
+    margin: 0rem 10rem 0rem 10rem;
+}
+
+.signups {
+    position: relative;
+    /*top: 50%;*/
+    transform: translateY(-50%);
+    transition: 0.2s;
+    display: inline-block;
+    margin: 0 20px;
+    text-decoration: none;
+    color: #000;
+}
+
+/*styling the links signup and signin on home page to hover*/
+.signup {
+    position: relative;
+    /*top: 50%;*/
+    transform: translateY(-50%);
+    transition: 0.2s;
+    display: inline-block;
+    margin: 0 20px;
+    text-decoration: none;
+    color: #000;
+}
+
+.signup:hover {
+    padding-bottom: 20px;
+}
+
+.signin {
+    position: relative;
+    /*top: 20%;*/
+    transform: translateY(-50%);
+    transition: 0.2s;
+    display: inline-block;
+    margin: 0 20px;
+    text-decoration: none;
+    color: #000;
+}
+
+.signin:hover {
+    padding-bottom: 20px;
+}
+
+
+/*Styling the footer*/
+.text-small {
+    font-size: 0.9rem;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+a:hover, a:focus {
+    text-decoration: none;
+}
+
+footer {
+    background: #212529;
+}
+
