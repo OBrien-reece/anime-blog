@@ -2,6 +2,11 @@
     position: relative;
 }
 
+/*styling active nav bar link */
+.navbar-nav .nav-link.active {
+    color: red;
+}
+
 /*on hover active links*/
 .navLink:hover {
     color: red;
@@ -26,11 +31,6 @@
 .anime-text {
     color: purple;
 }
-
-/*!*background image text*!*/
-/*.image-text {*/
-/*    background-color: white;*/
-/*}*/
 
 /*image card 1*/
 .image-card-1 {
@@ -130,5 +130,32 @@ a:hover, a:focus {
 
 footer {
     background: #212529;
+}
+/*footer styles end here*/
+
+/*styling the card to display image on hover*/
+.card:hover .card-img-overlay{
+    display: block;
+    opacity: 0.4;
+}
+.card-img-overlay{
+    height: 100%;
+    display: none;
+}
+/*styling the card end here*/
+
+/*styling the input text field*/
+.input-form {
+    background: transparent;
+    border: none;
+    /*border-bottom: 1px solid #000000;*/
+    border: none transparent;
+    outline: none;
+    font-family: "Times New Roman", SansSerif;
+}
+
+/*style input form laceholder*/
+.input-placeholder {
+    font-size: 40px
 }
 

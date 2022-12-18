@@ -44,9 +44,26 @@
                     <ul class="navbar-nav ms-auto">
 
                         {{--Navbar Items--}}
-                        <li><a href="/home" class="nav-item nav-link navLink {{ request()->is('home') ? 'active' : '' }}">Home</a></li>
-                        <li><a href="#" class="nav-item nav-link navLink {{ request()->is('about') ? 'active' : '' }}">About</a></li>
-                        <li><a href="#" class="nav-item nav-link navLink {{ request()->is('contact') ? 'active' : '' }}">Contact Us</a></li>
+                        <li>
+                            <a href="/home" class="nav-item nav-link navLink {{ request()->is('/') ? 'active' : '' }} {{ request()->is('home') ? 'active' : '' }}">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/blog/create" class="nav-item nav-link navLink {{ request()->is('*/create') ? 'active' : '' }}">
+                                Create Blog
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-item nav-link navLink {{ request()->is('about') ? 'active' : '' }}">
+                                About
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-item nav-link navLink {{ request()->is('contact') ? 'active' : '' }}">
+                                Contact Us
+                            </a>
+                        </li>
 
                         <!-- Authentication Links -->
                         @guest
@@ -85,9 +102,10 @@
             </div>
         </nav>
 
-        <main class="py-">
+        <main class="">
             @yield('content')
         </main>
     </div>
+
 </body>
 </html>

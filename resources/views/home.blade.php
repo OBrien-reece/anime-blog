@@ -27,7 +27,7 @@
                                   <hr>
                               @endif
                           @else
-                              <h2 class=" signup create_blog_link"><a href="">{{ __('Create blog') }} &rarr;</h2>
+                              <h2 class=" signup create_blog_link"><a href="/blog/create">{{ __('Create blog') }} &rarr;</a></h2>
                           @endguest
                       </h6>
               </div>
@@ -35,43 +35,40 @@
 
           <div>
               <div class="row">
-                  <div class="col-md-4" style="position: absolute">
-                      <div class="card img-fluid image-card-1">
-                          <img class="card-img-top" src="{{ URL('storage/rmluffy.png') }}" alt="Card image" style="width:100%">
-                          <div class="card-img-overlay">
-                              <h4 class="card-title">Avro</h4>
-                              <p class="card-text">Tutorial for Apache Avro</p>
-                              <a href="#" class="btn btn-info">Learn</a>
-                          </div>
-                      </div>
-                  </div>
+                      <div class="col-md-4">
+                          <div class="card">
+                              <div class="card-body">
+                                  <span class="card-title">
+                                      <code>
+                                          <h3>One Piece</h3>
+                                      </code>
+                                  </span>
 
-                      <div class="col-md-4" style="position: absolute">
-                          <div class="card img-fluid image-card-2">
-                              <img class="card-img-top" src="{{ URL('storage/rmluffy.png') }}" alt="Card image" style="width:100%">
-                              <div class="card-img-overlay">
-                                  <h4 class="card-title">Avro</h4>
-                                  <p class="card-text">Tutorial for Apache Avro</p>
-                                  <a href="#" class="btn btn-info">Learn</a>
+                                  <br>
+
+                                  <span class="card-text">
+                                      Lorem ipsum dolor sit amet, consectetur adipisicing
+                                      elit. Aut culpa deserunt ea esse incidunt inventore,
+                                      numquam reiciendis repellat ullam veritatis.
+                                  </span>
+
+                                  <br><br>
+
+                                  <span class="card-link">
+                                      <a href="">
+                                          <h4>Read Blog &rarr;</h4>
+                                      </a>
+                                  </span>
                               </div>
+{{--                              <img class="img-fluid card-img-overlay" src="{{ URL('storage/luffy.jpg') }}" alt="">--}}
                           </div>
                       </div>
 
-                      <div class="col-md-4" style="position: absolute">
-                          <div class="card img-fluid image-card-3">
-                              <img class="card-img-top" src="{{ URL('storage/rmluffy.png') }}" alt="Card image" style="width:100%">
-                              <div class="card-img-overlay">
-                                  <h4 class="card-title">Avro</h4>
-                                  <p class="card-text">Tutorial for Apache Avro</p>
-                                  <a href="#" class="btn btn-info">Learn</a>
-                              </div>
-                          </div>
-                      </div>
               </div>
           </div>
       </div>
 
-       <div class="row" style="margin-top: 60px">
+       <div class="row" style="margin-top: 20px">
            <div class="col-md-8">
                <h3>One Piece</h3>
                <p>Lorem ipsum dolor sit amet, consectetur adipisicing
@@ -109,6 +106,9 @@
 
 
        </div>
+
+</div>
+
 <!-- FOOTER -->
 <footer class="w-100 py-4 flex-shrink-0">
     <div class="container py-4">
@@ -150,4 +150,8 @@
     </div>
 </footer>
 </div>
+
 @endsection
+
+
+
