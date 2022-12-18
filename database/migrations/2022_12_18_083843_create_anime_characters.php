@@ -14,8 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('anime_characters', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->unsignedInteger('anime_id');
+            $table->unsignedInteger('character_id');
+            $table->foreign('anime_id')->references('id')->on('anime')->cascadeOnDelete();
+            $table->foreign('character_id')->references('id')->on('characters')->cascadeOnDelete();
         });
     }
 

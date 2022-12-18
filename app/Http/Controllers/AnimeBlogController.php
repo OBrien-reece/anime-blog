@@ -50,7 +50,7 @@ class AnimeBlogController extends Controller
             'studio' => $request->input('studio')
         ]);
 
-        return view('/home');
+        return redirect('/home');
     }
 
     /**
