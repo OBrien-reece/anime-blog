@@ -38,7 +38,7 @@
 
                   @foreach($animes as $anime)
 
-                      <div class="col-md-4">
+                      <div class="col-md-4 mb-4">
                               <div class="card">
                                   <div class="card-body">
                                   <span class="card-title">
@@ -50,14 +50,18 @@
                                       <br>
 
                                       <span class="card-text">
-                                      {{ $anime['description'] }}
+                                      {{Str::limit($anime["description"], 200)}}
                                   </span>
 
                                       <br><br>
 
                                       <span class="card-link">
                                       <a href="">
-                                          <h4>Read Blog &rarr;</h4>
+                                          <a href="/blog/{{ $anime['id'] }}" class="btn-link">
+                                              <strong>
+                                                  Read more &rarr;
+                                              </strong>
+                                          </a>
                                       </a>
                                   </span>
                                   </div>

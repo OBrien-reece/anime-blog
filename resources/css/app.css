@@ -159,3 +159,7 @@ footer {
     font-size: 40px
 }
 
+/*style btn link*/
+.btn-link {
+    text-decoration: none;
+}

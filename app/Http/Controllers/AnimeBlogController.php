@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Anime;
 use App\Http\Requests\ValidateAnimeBlogRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class AnimeBlogController extends Controller
 {
