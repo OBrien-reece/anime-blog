@@ -10,7 +10,7 @@ class AnimeBlogController extends Controller
 {
 
     public function __construct() {
-        $this->middleware('auth');
+        $this->middleware('auth', ['except' => 'index']);
     }
     /**
      * Display a listing of the resource.
@@ -19,7 +19,11 @@ class AnimeBlogController extends Controller
      */
     public function index()
     {
-        //
+        $animes = Anime::all();
+
+        return view('/home', [
+            'animes' => $animes
+        ]);
     }
 
     /**
@@ -50,7 +54,7 @@ class AnimeBlogController extends Controller
             'studio' => $request->input('studio')
         ]);
 
-        return redirect('/home');
+        return redirect('/');
     }
 
     /**

@@ -45,7 +45,7 @@
 
                         {{--Navbar Items--}}
                         <li>
-                            <a href="/home" class="nav-item nav-link navLink {{ request()->is('/') ? 'active' : '' }} {{ request()->is('home') ? 'active' : '' }}">
+                            <a href="/home" class="nav-item nav-link navLink {{ request()->is('/') ? 'active' : '' }} {{ request()->is('home') ? 'active' : '' }} {{ request()->is('blog') ? 'active' : '' }}">
                                 Home
                             </a>
                         </li>

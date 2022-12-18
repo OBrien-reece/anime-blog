@@ -35,34 +35,37 @@
 
           <div>
               <div class="row">
+
+                  @foreach($animes as $anime)
+
                       <div class="col-md-4">
-                          <div class="card">
-                              <div class="card-body">
+                              <div class="card">
+                                  <div class="card-body">
                                   <span class="card-title">
                                       <code>
-                                          <h3>One Piece</h3>
+                                          <h3>{{ $anime['anime_title'] }}</h3>
                                       </code>
                                   </span>
 
-                                  <br>
+                                      <br>
 
-                                  <span class="card-text">
-                                      Lorem ipsum dolor sit amet, consectetur adipisicing
-                                      elit. Aut culpa deserunt ea esse incidunt inventore,
-                                      numquam reiciendis repellat ullam veritatis.
+                                      <span class="card-text">
+                                      {{ $anime['description'] }}
                                   </span>
 
-                                  <br><br>
+                                      <br><br>
 
-                                  <span class="card-link">
+                                      <span class="card-link">
                                       <a href="">
                                           <h4>Read Blog &rarr;</h4>
                                       </a>
                                   </span>
+                                  </div>
+
                               </div>
-{{--                              <img class="img-fluid card-img-overlay" src="{{ URL('storage/luffy.jpg') }}" alt="">--}}
-                          </div>
                       </div>
+
+                  @endforeach
 
               </div>
           </div>

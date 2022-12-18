@@ -9,5 +9,5 @@ class animeCharacter extends Model
 {
     use HasFactory;
 
-    protect $table = 'anime_characters';
+    protected $table = 'anime_characters';
 }

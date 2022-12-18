@@ -14,12 +14,10 @@ use App\Http\Controllers\AnimeBlogController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'App\Http\Controllers\AnimeBlogController@index');
 
 Route::resource('/blog', AnimeBlogController::class);
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\AnimeBlogController::class, 'index'])->name('home');
