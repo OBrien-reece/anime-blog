@@ -17,10 +17,21 @@
                         <input
                             type="text"
                             placeholder="Anime Title e.g One Piece"
-                            class="form-control {{ $errors->has('anime_title') ? 'is-invalid' : '' }}"
+                            class="form-control @error('anime_title') is-invalid @enderror "
                             name="anime_title"
                             value="{{ old('anime_title') }}"
                             id="">
+
+                         @if($errors->any())
+
+                            @if($errors->has('anime_title'))
+                                <div class="invalid-feedback">{{ $errors->first('anime_title') }}</div>
+                            @else
+                                <div class="text-success" style="color: green">{{ __("Looks good!") }}</div>
+                            @endif
+
+                        @endif
+
                     </div>
 
                     <div class="form-group mt-3">
@@ -31,10 +42,31 @@
                             style="color: gray"
                             name="blog_title"
                             value="{{ old('blog_title') }}"
+                            required
                             placeholder="Article Title...">
+
+                        @if($errors->any())
+
+                            @if($errors->has('blog_title'))
+                                <div class="text-danger">{{ $errors->first('blog_title') }}</div>
+                            @else
+                                <div class="text-success" style="color: green">{{ __("Looks good!") }}</div>
+                            @endif
+
+                        @endif
+
                     </div>
 
                     <textarea class="mt-4" name="description" id="description" cols="102" rows="10">{{ old('description') }}</textarea>
+                    @if($errors->any())
+
+                        @if($errors->has('description'))
+                            <div class="text-danger">{{ $errors->first('description') }}</div>
+                        @else
+                            <div class="text-success" style="color: green">{{ __("Looks good!") }}</div>
+                        @endif
+
+                    @endif
 
                     <div class="form-group">
                         <div class="row">
@@ -45,7 +77,18 @@
                                     name="aired"
                                     id="date"
                                     value="{{ old('aired') }}"
-                                    class="form-control">
+                                    class="form-control @error('aired') is-invalid @enderror">
+
+                                @if($errors->any())
+
+                                    @if($errors->has('aired'))
+                                        <div class="text-danger">{{ $errors->first('aired') }}</div>
+                                    @else
+                                        <div class="text-success" style="color: green">{{ __("Looks good!") }}</div>
+                                    @endif
+
+                                @endif
+
                             </div>
                             <div class="col-md-6 mb-2">
                                 <label for="studio" class="mb-2 mt-2"><h4>Studio</h4></label>
@@ -54,7 +97,18 @@
                                     type="text"
                                     name="studio"
                                     id="studio"
-                                    class="form-control">
+                                    class="form-control @error('studio') is-invalid @enderror">
+
+                                @if($errors->any())
+
+                                    @if($errors->has('studio'))
+                                        <div class="text-danger">{{ $errors->first('studio') }}</div>
+                                    @else
+                                        <div class="text-success" style="color: green">{{ __("Looks good!") }}</div>
+                                    @endif
+
+                                @endif
+
                             </div>
                         </div>
                     </div>
@@ -63,19 +117,19 @@
 
                 </form>
             </div>
-            <div class="col-md-3 mt-5">
+{{--            <div class="col-md-3 mt-5">--}}
 
-                @if($errors->any())
-                    <div class="m-auto text-danger">
-                        @foreach($errors->all() as $error)
-                            <li class="list-none" style="list-style-type: none">
-                                <strong>{{ $error }}</strong>
-                            </li>
-                        @endforeach
-                    </div>
-                @endif
+{{--                @if($errors->any())--}}
+{{--                    <div class="m-auto text-danger">--}}
+{{--                        @foreach($errors->all() as $error)--}}
+{{--                            <li class="list-none" style="list-style-type: none">--}}
+{{--                                <strong>{{ $error }}</strong>--}}
+{{--                            </li>--}}
+{{--                        @endforeach--}}
+{{--                    </div>--}}
+{{--                @endif--}}
 
-            </div>
+{{--            </div>--}}
         </div>
     </div>
 @endsection

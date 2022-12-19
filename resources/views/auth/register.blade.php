@@ -39,7 +39,14 @@
 
                         <div class="col-md-6">
 
-                            <input id="lname" type="text" class="form-control @error('lname') is-invalid @enderror" name="lname" value="{{ old('lname') }}" required autocomplete="lname" autofocus>
+                            <input
+                                id="lname"
+                                type="text"
+                                class="form-control @error('lname') is-invalid @enderror"
+                                name="lname" value="{{ old('lname') }}"
+                                required
+                                autocomplete="lname"
+                                autofocus>
 
                             @error('lname')
                             <span class="invalid-feedback" role="alert">
@@ -55,7 +62,14 @@
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <input
+                                    id="email"
+                                    type="email"
+                                    class="form-control @error('email') is-invalid @enderror"
+                                    name="email"
+                                    value="{{ old('email') }}"
+                                    required
+                                    autocomplete="email">
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -63,6 +77,24 @@
                                     </span>
                                 @enderror
                             </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label
+                                for="user_type"
+                                class="col-md-4 col-form-label text-md-end">
+                                {{ __('User Type') }}
+                            </label>
+                                <div class="col-md-3 m-auto">
+                                    <input
+                                        type="radio"
+{{--                                        onclick="this.checked=false; alert('Sorry, this option is not available at the moment!')"--}}
+                                        name="user_type"
+                                        value="Admin">    Admin
+                                </div>
+                                <div class="col-md-3 m-auto">
+                                    <input type="radio" checked name="user_type" value="User">     User
+                                </div>
                         </div>
 
                         <div class="row mb-3">
