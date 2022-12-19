@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnimeBlogController;
+use App\Http\Controllers\AnimeCharacterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +15,11 @@ use App\Http\Controllers\AnimeBlogController;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\AnimeBlogController@index');
-
-Route::resource('/blog', AnimeBlogController::class);
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\AnimeBlogController::class, 'index'])->name('home');
+Route::resource('/blog', AnimeBlogController::class);
+Route::resource('/character', AnimeCharacterController::class);
+
+
+
+

@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\nameRegex;
 use Illuminate\Foundation\Http\FormRequest;
 
 class ValidateAnimeBlogRequest extends FormRequest
@@ -24,11 +25,11 @@ class ValidateAnimeBlogRequest extends FormRequest
     public function rules()
     {
         return [
-            'anime_title' => 'required | min:2',
-            'blog_title' => ['required','min:5',''],
-            'description' => ['required','min:1000'],
+            'anime_title' => 'required | min:2', new nameRegex,
+            'blog_title' => ['required','min:5', new nameRegex],
+            'description' => ['required','min:1000', new nameRegex],
             'aired' => ['required'],
-            'studio' => ['required']
+            'studio' => ['required', new nameRegex]
         ];
     }
 }

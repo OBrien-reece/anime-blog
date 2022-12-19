@@ -2,6 +2,14 @@
 
 @section('content')
 
+    @if(!Auth::user())
+        <script>
+            setTimeout(function() {
+                window.location.href = "/login"
+            }, 6000); // 2 second
+        </script>
+    @endif
+
 <div class="container wrapper">
 
       <div>

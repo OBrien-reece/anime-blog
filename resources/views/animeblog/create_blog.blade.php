@@ -14,25 +14,47 @@
                                 <strong>Anime Title</strong>
                             </h2>
                         </label>
-                        <input type="text" placeholder="Anime Title e.g One Piece" class="form-control" name="anime_title" id="">
+                        <input
+                            type="text"
+                            placeholder="Anime Title e.g One Piece"
+                            class="form-control {{ $errors->has('anime_title') ? 'is-invalid' : '' }}"
+                            name="anime_title"
+                            value="{{ old('anime_title') }}"
+                            id="">
                     </div>
 
                     <div class="form-group mt-3">
                         <label for="blog-title"></label>
-                        <input type="text" class="input-form input-placeholder" style="color: gray" name="blog_title" placeholder="Article Title...">
+                        <input
+                            type="text"
+                            class="input-form input-placeholder"
+                            style="color: gray"
+                            name="blog_title"
+                            value="{{ old('blog_title') }}"
+                            placeholder="Article Title...">
                     </div>
 
-                    <textarea class="mt-4" name="description" id="description" cols="102" rows="10"></textarea>
+                    <textarea class="mt-4" name="description" id="description" cols="102" rows="10">{{ old('description') }}</textarea>
 
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-6 mb-2">
                                 <label for="aired" class="mb-2 mt-2"><h4>First Aired</h4></label>
-                                <input type="date" name="aired" id="date" class="form-control">
+                                <input
+                                    type="date"
+                                    name="aired"
+                                    id="date"
+                                    value="{{ old('aired') }}"
+                                    class="form-control">
                             </div>
                             <div class="col-md-6 mb-2">
                                 <label for="studio" class="mb-2 mt-2"><h4>Studio</h4></label>
-                                <input type="text" name="studio" id="studio" class="form-control">
+                                <input
+                                    value="{{ old('studio') }}"
+                                    type="text"
+                                    name="studio"
+                                    id="studio"
+                                    class="form-control">
                             </div>
                         </div>
                     </div>
@@ -47,7 +69,7 @@
                     <div class="m-auto text-danger">
                         @foreach($errors->all() as $error)
                             <li class="list-none" style="list-style-type: none">
-                                {{ $error }}
+                                <strong>{{ $error }}</strong>
                             </li>
                         @endforeach
                     </div>
