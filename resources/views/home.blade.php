@@ -49,11 +49,22 @@
                       <div class="col-md-4 mb-4">
                               <div class="card">
                                   <div class="card-body">
-                                  <span class="card-title">
-                                      <code>
-                                          <h3>{{ $anime['anime_title'] }}</h3>
-                                      </code>
-                                  </span>
+                                  <div>
+                                      <span><code><h4>{{ $anime['anime_title'] }}</h4></code></span>
+
+                                      @if(Auth::user())
+                                          @if(Auth::user()->user_type == 'Admin')
+                                              <span>
+                                                  <a href="/character/create/">
+                                                      <small>
+                                                          Add Anime Characters&rarr;
+                                                      </small>
+                                                  </a>
+                                              </span>
+                                          @endif
+                                      @endif
+
+                                  </div>
 
                                       <br>
 
@@ -65,7 +76,7 @@
 
                                       <span class="card-link">
                                       <a href="">
-                                          <a href="/blog/{{ $anime['id'] }}" class="btn-link">
+                                          <a href="/blog/{{ $anime['slug'] }}" class="btn-link">
                                               <strong>
                                                   Read more &rarr;
                                               </strong>

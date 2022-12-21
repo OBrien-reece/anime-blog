@@ -163,3 +163,29 @@ footer {
 .btn-link {
     text-decoration: none;
 }
+
+/*style h4 class*/
+.h2-class {
+    color: gray;
+}
+
+/*style for anime name*/
+.anime_name {
+    font-size: 20px;
+}
+
+/*styling label size*/
+.label-size {
+    font-size: 18px;
+}
+
+/*stling asterick sup*/
+sup {
+    color: red;
+}
+
+/*styling the textarea*/
+.textarea {
+    border: none;
+    outline: none;
+}

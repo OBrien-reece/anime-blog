@@ -52,6 +52,7 @@ class AnimeBlogController extends Controller
             'blog_title' => $request->input('blog_title'),
             'description' => $request->input('description'),
             'aired' => $request->input('aired'),
+            'slug' => Str::slug($request->input('blog_title')),
             'studio' => $request->input('studio')
         ]);
 
@@ -64,9 +65,14 @@ class AnimeBlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Anime $anime)
     {
-        //
+//      dd($anime);
+
+        return view('animeblog.show-blog', [
+            'anime' => $anime
+        ]);
+
     }
 
     /**

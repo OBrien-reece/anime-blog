@@ -21,7 +21,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/home') }}">
+                <a class="navbar-brand" href="{{ url('/blog') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -46,7 +46,7 @@
 
                         {{--Navbar Items--}}
                         <li>
-                            <a href="/home" class="nav-item nav-link navLink {{ request()->is('/') ? 'active' : '' }} {{ request()->is('home') ? 'active' : '' }} {{ request()->is('blog') ? 'active' : '' }}">
+                            <a href="/blog" class="nav-item nav-link navLink {{ request()->is('/') ? 'active' : '' }} {{ request()->is('home') ? 'active' : '' }} {{ request()->is('blog') ? 'active' : '' }}">
                                 Home
                             </a>
                         </li>

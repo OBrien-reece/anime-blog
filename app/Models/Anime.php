@@ -13,7 +13,12 @@ class Anime extends Model
 
     protected $primaryKey = 'id';
 
-    protected $fillable = ['anime_title','blog_title','description','aired','studio'];
+    protected $fillable = ['anime_title','blog_title','description','aired','studio','slug'];
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 
 //    protected $hidden = 'id';
 }

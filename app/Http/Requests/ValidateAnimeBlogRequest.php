@@ -27,7 +27,7 @@ class ValidateAnimeBlogRequest extends FormRequest
         return [
             'anime_title' => 'required | min:2', new nameRegex,
             'blog_title' => ['required','min:5', new nameRegex],
-            'description' => ['required','min:1000', new nameRegex],
+            'description' => ['required','min:1000'],
             'aired' => ['required'],
             'studio' => ['required', new nameRegex]
         ];
