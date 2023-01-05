@@ -29,7 +29,8 @@ class ValidateAnimeBlogRequest extends FormRequest
             'blog_title' => ['required','min:5', new nameRegex],
             'description' => ['required','min:1000'],
             'aired' => ['required'],
-            'studio' => ['required', new nameRegex]
+            'studio' => ['required', new nameRegex],
+            'anime_image_profile' => 'required | mimes:jpeg,jpg,png | max:5408'
         ];
     }
 }

@@ -47,11 +47,16 @@ class AnimeBlogController extends Controller
     {
         $request->validated();
 
+        $newFileName = time() . "-" . $request->name . '.' . $request->anime_image_profile->extension();
+
+        $request->anime_image_profile->move(public_path('images/anime_image_profile'), $newFileName);
+
         $anime_blog = Anime::create([
            'anime_title' => $request->input('anime_title'),
             'blog_title' => $request->input('blog_title'),
             'description' => $request->input('description'),
             'aired' => $request->input('aired'),
+            'anime_image_profile' => $newFileName,
             'slug' => Str::slug($request->input('blog_title')),
             'studio' => $request->input('studio')
         ]);

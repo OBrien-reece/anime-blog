@@ -47,10 +47,10 @@ class AnimeCharacterController extends Controller
         $request->validated();
 
         $new_image_path_1 = time() . '-' . $request->name . '.' . $request->image_path->extension();
-        $request->image_path->move(public_path('images'), $new_image_path_1);
+        $request->image_path->move(public_path('images/anime_character_profile'), $new_image_path_1);
 
         $new_image_path_2 = time() . '-' . $request->name . '.' . $request->image_path_2->extension();
-        $request->image_path_2->move(public_path('images'), $new_image_path_2);
+        $request->image_path_2->move(public_path('images/anime_character_profile'), $new_image_path_2);
 
         $character = Character::create([
             'characters' => $request->input('characters'),

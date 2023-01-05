@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-9 m-auto mt-5" >
 
-                <form autocomplete="off" action="/blog" method="POST">
+                <form enctype="multipart/form-data" autocomplete="off" action="/blog" method="POST">
                     @csrf
 
                     <div class="form-group">
@@ -57,7 +57,8 @@
 
                     </div>
 
-                    <textarea class="mt-4" name="description" id="description" cols="102" rows="10">{{ old('description') }}</textarea>
+                    <textarea class="mt-4 summernote" name="description" id="your_summernote" >{{ old('description') }}</textarea>
+
                     @if($errors->any())
 
                         @if($errors->has('description'))
@@ -67,6 +68,19 @@
                         @endif
 
                     @endif
+
+                    <script>
+                        var tx = document.getElementsByTagName('textarea');
+                        for (var i = 0; i < tx.length; i++) {
+                            tx[i].setAttribute('style', 'height:' + (tx[i].scrollHeight) + 'px;overflow-y:hidden;');
+                            tx[i].addEventListener("input", OnInput, false);
+                        }
+
+                        function OnInput(e) {
+                            this.style.height = 'auto';
+                            this.style.height = (this.scrollHeight) + 'px';
+                        }
+                    </script>
 
                     <div class="form-group">
                         <div class="row">
@@ -111,6 +125,19 @@
 
                             </div>
                         </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="file" name="anime_image_profile" class="form-control">
+                        @if($errors->any())
+
+                            @if($errors->has('anime_image_profile'))
+                                <div class="text-danger">{{ $errors->first('studio') }}</div>
+                            @else
+                                <div class="text-success" style="color: green">{{ __("Looks good!") }}</div>
+                            @endif
+
+                        @endif
                     </div>
 
                     <button class="btn btn-success mt-4 mb-5 col-12" name="postBlogBtn" type="submit">Post Blog</button>

@@ -3,7 +3,7 @@
 }
 
 /*styling active nav bar link */
-.navbar-nav .nav-link.active {
+.navbar-nav .navLink.active {
     color: red;
 }
 
@@ -189,3 +189,4 @@ sup {
     border: none;
     outline: none;
 }
+

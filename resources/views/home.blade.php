@@ -69,7 +69,7 @@
                                       <br>
 
                                       <span class="card-text">
-                                      {{Str::limit($anime["description"], 200)}}
+                                      {!! Str::limit($anime["description"], 200) !!}
                                   </span>
 
                                       <br><br>
