@@ -28,9 +28,22 @@ class ValidateAnimeBlogRequest extends FormRequest
             'anime_title' => 'required | min:2', new nameRegex,
             'blog_title' => ['required','min:5', new nameRegex],
             'description' => ['required','min:1000'],
-            'aired' => ['required'],
+            'premiered' => ['required'],
+            'genre' => ['required', new nameRegex],
+            'licensors' => ['required', new nameRegex],
             'studio' => ['required', new nameRegex],
             'anime_image_profile' => 'required | mimes:jpeg,jpg,png | max:5408'
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'premiered.required' => 'Please insert the Anime premier season',
+            'genre.required' => 'Please insert the anime genre',
+            'licensors.required' => 'Pleae insert the Anime licensor company(s) name',
+            'studio.required' => 'Please insert the Anime studio name'
+        ];
+    }
+
 }

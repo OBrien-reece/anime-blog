@@ -9,7 +9,7 @@
                     @csrf
 
                     <div class="form-group">
-                        <label for="anime_name" class="for">
+                        <code><label for="anime_name" class="for"></code>
                             <h2>
                                 <strong>Anime Title</strong>
                             </h2>
@@ -35,7 +35,7 @@
                     </div>
 
                     <div class="form-group mt-3">
-                        <label for="blog-title"></label>
+                        <code><label for="blog-title"></label></code>
                         <input
                             type="text"
                             class="input-form input-placeholder"
@@ -82,33 +82,106 @@
                         }
                     </script>
 
-                    <div class="form-group">
+                    <div class="form-group mt-3">
                         <div class="row">
+
+                            <h4 style="color: gray">Anime Information</h4>
+
                             <div class="col-md-6 mb-2">
-                                <label for="aired" class="mb-2 mt-2"><h4>First Aired</h4></label>
-                                <input
-                                    type="date"
-                                    name="aired"
-                                    id="date"
-                                    value="{{ old('aired') }}"
-                                    class="form-control @error('aired') is-invalid @enderror">
+                                <div class="form-group">
+                                    <code><label for="aired" class="mb-2 mt-2"><h5>Type of anime:</h5></label></code>
+                                    <select class="form-select" name="animetype" id="type">
+                                        <option value="Television Series">Television Series</option>
+                                        <option value="Movie">Movie</option>
+                                    </select>
+                                </div>
+                            </div>
 
-                                @if($errors->any())
+                            <div class="col-md-6 mb-2">
+                                <div class="form-group">
+                                    <code><label for="aired" class="mb-2 mt-2"><h5>Status of the Anime:</h5></label></code>
+                                    <select class="form-select" name="anime_status" id="type">
+                                        <option value="Ongoing">Ongoing</option>
+                                        <option value="Completed">Completed</option>
+                                    </select>
+                                </div>
+                            </div>
 
-                                    @if($errors->has('aired'))
-                                        <div class="text-danger">{{ $errors->first('aired') }}</div>
-                                    @else
-                                        <div class="text-success" style="color: green">{{ __("Looks good!") }}</div>
+                            <div class="col-md-6 mb-2">
+                                <div class="form-group">
+                                    <code><label for="aired" class="mb-2 mt-2"><h5>Anime Premier:</h5></label></code>
+                                    <input type="text"
+                                           class="form-control @error('premiered') is_invalid @enderror"
+                                           name="premiered"
+                                           placeholder="e.g Winter 2017"
+                                           value="{{ old('premiered') }}"
+                                           id="premiered">
+
+                                    @if($errors->any())
+
+                                        @if($errors->has('premiered'))
+                                            <div class="text-danger">{{ $errors->first('premiered') }}</div>
+                                        @else
+                                            <div class="text-success" style="color: green">{{ __("Looks good!") }}</div>
+                                        @endif
+
                                     @endif
 
-                                @endif
-
+                                </div>
                             </div>
+
                             <div class="col-md-6 mb-2">
-                                <label for="studio" class="mb-2 mt-2"><h4>Studio</h4></label>
+                                <div class="form-group">
+                                    <code><label for="aired" class="mb-2 mt-2"><h5>Anime Genre:</h5></label></code>
+                                    <input type="text"
+                                           placeholder="e.g Action, Fantasy, Shonen"
+                                           class="form-control @error('genre') is-invalid @enderror"
+                                           name="genre"
+                                           value="{{ old('genre') }}"
+                                           id="genre">
+
+                                    @if($errors->any())
+
+                                        @if($errors->has('genre'))
+                                            <div class="text-danger">{{ $errors->first('genre') }}</div>
+                                        @else
+                                            <div class="text-success" style="color: green">{{ __("Looks good!") }}</div>
+                                        @endif
+
+                                    @endif
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mb-2">
+                                <div class="form-group">
+                                    <code><label for="aired" class="mb-2 mt-2"><h5>Licensors</h5></label></code>
+                                    <input type="text"
+                                           placeholder="e.g Funimation, Crunchyroll"
+                                           class="form-control @error('licensors') is-invalid @enderror"
+                                           name="licensors"
+                                           value="{{ old('licensors') }}"
+                                           id="genre">
+
+                                    @if($errors->any())
+
+                                        @if($errors->has('licensors'))
+                                            <div class="text-danger">{{ $errors->first('licensors') }}</div>
+                                        @else
+                                            <div class="text-success" style="color: green">{{ __("Looks good!") }}</div>
+                                        @endif
+
+                                    @endif
+
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 mb-2">
+                                <code><label for="aired" class="mb-2 mt-2"><h5>Studio</h5></label></code>
                                 <input
                                     value="{{ old('studio') }}"
                                     type="text"
+                                    placeholder="e.g Studio Mappa"
                                     name="studio"
                                     id="studio"
                                     class="form-control @error('studio') is-invalid @enderror">
@@ -124,6 +197,7 @@
                                 @endif
 
                             </div>
+
                         </div>
                     </div>
 
@@ -132,7 +206,7 @@
                         @if($errors->any())
 
                             @if($errors->has('anime_image_profile'))
-                                <div class="text-danger">{{ $errors->first('studio') }}</div>
+                                <div class="text-danger">{{ $errors->first('anime_image_profile') }}</div>
                             @else
                                 <div class="text-success" style="color: green">{{ __("Looks good!") }}</div>
                             @endif

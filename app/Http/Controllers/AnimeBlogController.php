@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Anime;
+use App\Models\BlogInfo;
 use App\Http\Requests\ValidateAnimeBlogRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -55,11 +56,26 @@ class AnimeBlogController extends Controller
            'anime_title' => $request->input('anime_title'),
             'blog_title' => $request->input('blog_title'),
             'description' => $request->input('description'),
-            'aired' => $request->input('aired'),
             'anime_image_profile' => $newFileName,
             'slug' => Str::slug($request->input('blog_title')),
-            'studio' => $request->input('studio')
         ]);
+        if($anime_blog->save()) {
+            $blog_id = \DB::table('anime')
+                ->select('id')
+                ->orderBy('id', 'desc')
+                ->limit(1)
+                ->value('id');
+
+            BlogInfo::create([
+                'type' => $request->input('animetype'),
+                'status' => $request->input('anime_status'),
+                'premiered' => $request->input('premiered'),
+                'studio' => $request->input('studio'),
+                'genre' => $request->input('genre'),
+                'licensors' => $request->input('licensors'),
+                'blog_id' => $blog_id
+            ]);
+        }
 
         return redirect('/');
     }
