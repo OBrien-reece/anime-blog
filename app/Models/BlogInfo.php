@@ -11,7 +11,7 @@ class BlogInfo extends Model
 
     protected $table = 'blog_information';
 
-    protected $fillable = ['blog_id	type', 'status', 'premiered', 'studio', 'genre', 'licensors'];
+    protected $fillable = ['blog_id', 'type', 'status', 'premiered', 'studio', 'genre', 'licensors'];
 
     protected $hidden = 'id';
 
