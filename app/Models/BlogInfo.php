@@ -15,5 +15,9 @@ class BlogInfo extends Model
 
     protected $hidden = 'id';
 
+    public function anime() {
+        return $this->belongsTo(Anime::class);
+    }
+
     public $timestamps = false;
 }

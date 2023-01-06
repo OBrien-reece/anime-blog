@@ -190,5 +190,10 @@ sup {
     outline: none;
 }
 
-
+/*styling image for blog show*/
+.image_avatar {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px;
+}
 
