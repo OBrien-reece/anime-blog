@@ -52,37 +52,33 @@
                                   <div>
                                       <span><code><h4>{{ $anime['anime_title'] }}</h4></code></span>
 
-                                      @if(Auth::user())
-                                          @if(Auth::user()->user_type == 'Admin')
-                                              <span>
-                                                  <a href="/character/create/">
-                                                      <small>
-                                                          Add Anime Characters&rarr;
-                                                      </small>
-                                                  </a>
-                                              </span>
-                                          @endif
-                                      @endif
-
                                   </div>
 
                                       <br>
 
                                       <span class="card-text">
-                                      {!! Str::limit($anime["description"], 200) !!}
+                                      {!! Str::limit($anime["description"], 300) !!}
                                   </span>
 
                                       <br><br>
 
-                                      <span class="card-link">
-                                      <a href="">
-                                          <a href="/blog/{{ $anime['slug'] }}" class="btn-link">
-                                              <strong>
-                                                  Read more &rarr;
-                                              </strong>
-                                          </a>
-                                      </a>
-                                  </span>
+                                      <div>
+                                          <span class="card-link">
+                                              <a href="/blog/{{ $anime['slug'] }}" class="btn-link">
+                                                  <strong>
+                                                      Read more &rarr;
+                                                  </strong>
+                                              </a>
+                                          </span>
+
+                                          {{--Show only the logged in user the Edit button to the blog he created--}}
+
+                                          @if(Auth::user() && Auth::user()->id === $anime['user_id'])
+                                              <div style="float: right"><span style="color: green;">Edit &rarr;</span></div>
+                                          @endif
+
+                                      </div>
+
                                   </div>
 
                               </div>

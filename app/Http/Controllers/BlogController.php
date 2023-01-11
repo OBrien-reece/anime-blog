@@ -8,7 +8,7 @@ use App\Http\Requests\ValidateAnimeBlogRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-class AnimeBlogController extends Controller
+class BlogController extends Controller
 {
 
     public function __construct() {
@@ -55,12 +55,13 @@ class AnimeBlogController extends Controller
         $anime_blog = Anime::create([
            'anime_title' => $request->input('anime_title'),
             'blog_title' => $request->input('blog_title'),
+            'user_id' => auth()->user()->id,
             'description' => $request->input('description'),
             'anime_image_profile' => $newFileName,
             'slug' => Str::slug($request->input('blog_title')),
         ]);
         if($anime_blog->save()) {
-            $blog_id = \DB::table('anime')
+            $anime_id = \DB::table('anime')
                 ->select('id')
                 ->orderBy('id', 'desc')
                 ->limit(1)
@@ -73,7 +74,7 @@ class AnimeBlogController extends Controller
                 'studio' => $request->input('studio'),
                 'genre' => $request->input('genre'),
                 'licensors' => $request->input('licensors'),
-                'blog_id' => $blog_id
+                'anime_id' => $anime_id
             ]);
         }
 
