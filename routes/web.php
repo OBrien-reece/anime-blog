@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\BlogController;
+use App\Http\Controllers\AnimeController;
 use App\Http\Controllers\AnimeCharacterController;
 /*
 |--------------------------------------------------------------------------
@@ -16,15 +16,15 @@ use App\Http\Controllers\AnimeCharacterController;
 
 Auth::routes();
 
-Route::get('/', 'App\Http\Controllers\BlogController@index');
+Route::get('/', 'App\Http\Controllers\AnimeController@index');
 
-Route::resource('/blog', 'App\Http\Controllers\BlogController', ['except' => ['show']]);
+Route::resource('/blog', 'App\Http\Controllers\AnimeController', ['except' => ['show', 'edit']]);
 
-//Route::resource('/blog', BlogController::class);
+Route::get('/blog/{anime}', [AnimeController::class, 'show']);
 
-Route::get('/blog/{anime}', [BlogController::class, 'show']);
+Route::get('/blog/{anime}/edit', [AnimeController::class, 'edit']);
 
 Route::resource('/character', AnimeCharacterController::class);
 
 
-//Route::get('/home', [App\Http\Controllers\BlogController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\AnimeController::class, 'index'])->name('home');

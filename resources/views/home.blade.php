@@ -41,7 +41,6 @@
               </div>
           </div>
 
-          <div>
               <div class="row">
 
                   @foreach($animes as $anime)
@@ -73,9 +72,18 @@
 
                                           {{--Show only the logged in user the Edit button to the blog he created--}}
 
+
                                           @if(Auth::user() && Auth::user()->id === $anime['user_id'])
-                                              <div style="float: right"><span style="color: green;">Edit &rarr;</span></div>
+                                              <div style="float: right">
+                                                  <span style="color: green;">
+                                                      <a href="/blog/{{ $anime['slug'] }}/edit">
+                                                          Edit
+                                                          <i class="fa-solid fa-pen-to-square"></i>
+                                                      </a>
+                                                  </span>
+                                              </div>
                                           @endif
+
 
                                       </div>
 
@@ -87,7 +95,7 @@
                   @endforeach
 
               </div>
-          </div>
+
       </div>
 
        <div class="row" style="margin-top: 20px">

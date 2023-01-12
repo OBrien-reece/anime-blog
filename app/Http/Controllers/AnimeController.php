@@ -8,7 +8,7 @@ use App\Http\Requests\ValidateAnimeBlogRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-class BlogController extends Controller
+class AnimeController extends Controller
 {
 
     public function __construct() {
@@ -103,9 +103,11 @@ class BlogController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Anime $anime)
     {
-        //
+        return view('animeblog.edit_blog', [
+            'anime' => $anime
+        ]);
     }
 
     /**

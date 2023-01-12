@@ -21,6 +21,8 @@
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <!-- //Summernote CSS - CDN Link -->
 
+    {{--Fontawesome--}}
+    <script src="https://kit.fontawesome.com/5a3d549b53.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -146,7 +148,6 @@
             focus: false
         });
     </script>
-    <!-- //Summernote JS - CDN Link -->
 
 </body>
 </html>
