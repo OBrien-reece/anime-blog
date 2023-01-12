@@ -15,7 +15,7 @@
       <div>
           <img src="{{ URL('storage/rmluffy.png') }}" alt="" class="background-img">
 
-          <div class="left-centered">
+          <div class="left-centered" style="margin-left: 80px;margin-top: 40px">
               <div>
                   <strong>
                           <h1 class="text-uppercase image-text anime-text">9anime : anime blog site</h1>
@@ -42,51 +42,103 @@
           </div>
 
           <div>
-              <div class="row">
 
-                  @foreach($animes as $anime)
+{{--              <div style="display: flex">--}}
+{{--                    <div class="row" style="margin: auto;position: relative">--}}
 
-                      <div class="col-md-4 mb-4">
-                              <div class="card">
-                                  <div class="card-body">
-                                  <div>
-                                      <span><code><h4>{{ $anime['anime_title'] }}</h4></code></span>
+{{--                  @foreach($animes as $anime)--}}
 
-                                  </div>
+{{--                      <div class="card_class">--}}
+{{--                          <div class="imgbox">--}}
+{{--                              <img class="img_class"--}}
+{{--                                  src="https://images.pexels.com/photos/1815257/pexels-photo-1815257.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"--}}
+{{--                              />--}}
 
-                                      <br>
+{{--                              <div class="content">--}}
+{{--                                  <h2>keep Smiling</h2>--}}
+{{--                                  <p>--}}
+{{--                                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat--}}
+{{--                                      doloribus vitae fugit enim repudiandae--}}
+{{--                                  </p>--}}
+{{--                              </div>--}}
+{{--                          </div>--}}
+{{--                      </div>--}}
 
-                                      <span class="card-text">
-                                      {!! Str::limit($anime["description"], 300) !!}
-                                  </span>
 
-                                      <br><br>
 
-                                      <div>
-                                          <span class="card-link">
-                                              <a href="/blog/{{ $anime['slug'] }}" class="btn-link">
-                                                  <strong>
-                                                      Read more &rarr;
-                                                  </strong>
-                                              </a>
-                                          </span>
 
-                                          {{--Show only the logged in user the Edit button to the blog he created--}}
+{{--                      <div class="col-md-4 mb-4">--}}
+{{--                              <div class="card">--}}
+{{--                                  <div class="card-body">--}}
+{{--                                  <div>--}}
+{{--                                      <span><code><h4>{{ $anime['anime_title'] }}</h4></code></span>--}}
 
-                                          @if(Auth::user() && Auth::user()->id === $anime['user_id'])
-                                              <div style="float: right"><span style="color: green;">Edit &rarr;</span></div>
-                                          @endif
+{{--                                  </div>--}}
 
-                                      </div>
+{{--                                      <br>--}}
 
-                                  </div>
+{{--                                      <span class="card-text">--}}
+{{--                                      {!! Str::limit($anime["description"], 300) !!}--}}
+{{--                                  </span>--}}
 
-                              </div>
+{{--                                      <br><br>--}}
+
+{{--                                      <div>--}}
+{{--                                          <span class="card-link">--}}
+{{--                                              <a href="/blog/{{ $anime['slug'] }}" class="btn-link">--}}
+{{--                                                  <strong>--}}
+{{--                                                      Read more &rarr;--}}
+{{--                                                  </strong>--}}
+{{--                                              </a>--}}
+{{--                                          </span>--}}
+
+{{--                                          --}}{{----}}{{--Show only the logged in user the Edit button to the blog he created--}}
+
+{{--                                          @if(Auth::user() && Auth::user()->id === $anime['user_id'])--}}
+{{--                                              <div style="float: right"><span style="color: green;">Edit &rarr;</span></div>--}}
+{{--                                          @endif--}}
+
+{{--                                      </div>--}}
+
+{{--                                  </div>--}}
+
+{{--                              </div>--}}
+{{--                      </div>--}}
+
+{{--                  @endforeach--}}
+
+{{--              </div>--}}
+{{--              </div>--}}
+
+              <section class="product">
+{{--                  <h2 class="product-category">Best selling</h2>--}}
+                  <button class="pre-btn"><img src="{{ URL('images/img/arrow.png') }}" alt=""></button>
+                  <button class="nxt-btn"><img src="{{ URL('images/img/arrow.png') }}" alt=""></button>
+                  <div class="product-container">
+
+
+                      @foreach($animes as $anime)
+
+                      <div class="product-card">
+                          <div class="product-image">
+                              <span class="discount-tag">50% off</span>
+                              <img src="{{ asset('images/anime_image_profile/' . $anime->anime_image_profile) }}" class="product-thumb" alt="Anime Picture">
+                              <button class="card-btn">Add to wishlist</button>
+                          </div>
+                          <div class="product-info">
+                              <h2 class="product-brand">Brand</h2>
+                              <p class="product-short-description">A short description</p>
+                              <span class="price">$20</span>
+                              <span class="actual-price">$40</span>
+                          </div>
                       </div>
 
-                  @endforeach
+                      @endforeach
 
-              </div>
+
+                  </div>
+              </section>
+
           </div>
       </div>
 

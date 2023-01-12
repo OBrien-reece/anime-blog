@@ -80,24 +80,6 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label
-                                for="user_type"
-                                class="col-md-4 col-form-label text-md-end">
-                                {{ __('User Type') }}
-                            </label>
-                                <div class="col-md-3 m-auto">
-                                    <input
-                                        type="radio"
-{{--                                        onclick="this.checked=false; alert('Sorry, this option is not available at the moment!')"--}}
-                                        name="user_type"
-                                        value="Admin">    Admin
-                                </div>
-                                <div class="col-md-3 m-auto">
-                                    <input type="radio" checked name="user_type" value="User">     User
-                                </div>
-                        </div>
-
-                        <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
 
                             <div class="col-md-6">
