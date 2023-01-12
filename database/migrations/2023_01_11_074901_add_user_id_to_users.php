@@ -13,9 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('blog_information', function (Blueprint $table) {
-            $table->unsignedInteger('blog_id')->after('id');
-            $table->foreign('blog_id')->references('id')->on('anime')->cascadeOnDelete();
+        Schema::table('anime', function (Blueprint $table) {
+            $table->integer('user_id')->after('id');
         });
     }
 
@@ -26,8 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('blog_information', function (Blueprint $table) {
-            $table->dropColumn('blog_id');
+        Schema::table('anime', function (Blueprint $table) {
+            $table->dropColumn('user_id');
         });
     }
 };
