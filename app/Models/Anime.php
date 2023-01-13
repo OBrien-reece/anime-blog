@@ -13,7 +13,7 @@ class Anime extends Model
 
     protected $primaryKey = 'id';
 
-    protected $fillable = ['anime_title','blog_title','description','aired','studio','slug','anime_image_profile'];
+    protected $fillable = ['anime_title','user_id','blog_title','description','slug','anime_image_profile'];
 
     public function blogInformation() {
         return $this->hasMany(BlogInfo::class);

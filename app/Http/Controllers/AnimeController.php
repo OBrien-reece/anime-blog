@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Anime;
 use App\Models\BlogInfo;
 use App\Http\Requests\ValidateAnimeBlogRequest;
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -117,9 +118,43 @@ class AnimeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ValidateAnimeBlogRequest $request, $id)
     {
-        //
+        $request->validated();
+
+        /*Update the details in the database by ID*/
+        $update_data = Anime::findOrFail($id);
+
+        $update_data = new Anime;
+
+        $update_data->anime_title = $request->input('anime_title');
+        $update_data->blog_title = $request->input('blog_title');
+        $update_data->user_id = auth()->user()->id;
+        $update_data->description = $request->input('description');
+        $update_data->slug = Str::slug($request->input('blog_title'));
+
+
+        /*Check if the user also wanted to update the image*/
+        if($request->hasFile('anime_image_profile')) {
+
+            $path_to_images = 'images/anime_image_profile/' . $update_data->anime_image_profile;
+
+            if(File::exists($path_to_images)) {
+                File::delete($path_to_images);
+            }
+
+            $new_file_name = '9anime' . '-' . time() . '-' . $request->name . '.' . $request->anime_image_profile->extension();
+
+            $request->anime_image_profile->move(public_path('images/anime_image_profile'), $new_file_name);
+
+            $update_data->anime_image_profile = $new_file_name;
+        }
+
+        if($update_data->update()) {
+            redirect('/');
+        }
+        dd('Error');
+
     }
 
     /**
