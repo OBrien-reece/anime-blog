@@ -132,12 +132,11 @@
                </div>
            </div>
 
-    <hr>
+            <hr>
 
 
        </div>
 
-</div>
 
 <!-- FOOTER -->
 <footer class="w-100 py-4 flex-shrink-0">

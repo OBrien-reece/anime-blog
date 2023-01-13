@@ -153,9 +153,19 @@ class AnimeController extends Controller
             $update_data->anime_image_profile = $new_file_name;
         }
 
-        $update_data->save();
-        return redirect('/');
+        if($update_data->save()) {
+            $update__blog_info = BlogInfo::where('anime_id', $id)->first()->update([
+                'type' => $request->input('animetype'),
+                'status' => $request->input('anime_status'),
+                'premiered' => $request->input('premiered'),
+                'studio' => $request->input('studio'),
+                'genre' => $request->input('genre'),
+                'licensors' => $request->input('licensors'),
+                'anime_id' => $id
+            ]);
+        }
 
+        return redirect('/');
     }
     /**
      * Remove the specified resource from storage.
