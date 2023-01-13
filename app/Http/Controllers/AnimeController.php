@@ -118,14 +118,17 @@ class AnimeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(ValidateAnimeBlogRequest $request, $id)
+
+    public function update(ValidateAnimeBlogRequest  $request, $id)
     {
         $request->validated();
 
         /*Update the details in the database by ID*/
         $update_data = Anime::findOrFail($id);
 
-        $update_data = new Anime;
+        if(!$update_data) {
+            $update_data = new Anime;
+        }
 
         $update_data->anime_title = $request->input('anime_title');
         $update_data->blog_title = $request->input('blog_title');
@@ -150,13 +153,10 @@ class AnimeController extends Controller
             $update_data->anime_image_profile = $new_file_name;
         }
 
-        if($update_data->update()) {
-            redirect('/');
-        }
-        dd('Error');
+        $update_data->save();
+        return redirect('/');
 
     }
-
     /**
      * Remove the specified resource from storage.
      *
