@@ -43,38 +43,39 @@
 
 
 
-          <div class="mt-1 border-bottom border-end border-start">
-
-              <div class="row m-auto mb-3">
+          <div class="mt-1 border-bottom border-end border-top border-start ">
+              <div class="row m-auto">
                   <div class="col-md-9">
-                     {{-- <div class="border-bottom border-top">
-                        <span style="font-family: Times New Roman, SansSerif;font-size: medium">
-                            <span style="color: purple">Updated Ongoing Anime Blogs</span>
-                            <span style="float: right">
-                                <a href="">
-                                    <small>
+                      <div class="border-bottom">
+                          <div style="font-family: Times New Roman, SansSerif;font-size: medium">
+                                <span style="color: purple">Ongoing Anime Blogs</span>
+                                <span style="float: right">
+                                    <a href="">
                                         Read More
-                                        <i class="fa-solid fa-chevron-right"></i>
-                                    </small>
-                                </a>
-                            </span>
-                        </span>
-                      </div>--}}
+                                        <small>
+                                            <i class="fa-solid fa-chevron-right"></i>
+                                        </small>
+                                    </a>
+                                </span>
+                          </div>
+                      </div>
 
                       @foreach($animes as $anime)
-
-                          <div class="col-md-3 mt-3">
-                              <img
-                                  style="border-radius: 3px"
-                                  width="100%"
-                                  src="{{ asset('images/anime_image_profile/' . $anime->anime_image_profile ) }}"
-                                  alt="Blog Anime Image">
-                          </div>
-
+                          <img
+                              width="100%"
+                              src=""
+                              alt="">
                       @endforeach
-                  </div>
-                  <div class="col-md-3"></div>
 
+                  </div>
+
+                  <div class="col-md-3 border-start">
+                      <div class="border-bottom">
+                          <span style="font-family: Times New Roman, SansSerif;font-size: medium">
+                                <span style="color: purple"></span>
+                          </span>
+                      </div>
+                  </div>
               </div>
           </div>
 
