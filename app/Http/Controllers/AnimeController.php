@@ -22,7 +22,8 @@ class AnimeController extends Controller
      */
     public function index()
     {
-        $animes = Anime::all();
+
+        $animes = Anime::all()->sortByDesc('created_at')->take(4);
 
         return view('/home', [
             'animes' => $animes

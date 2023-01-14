@@ -43,35 +43,40 @@
 
 
 
+          <div class="mt-1 border-bottom border-end border-start">
 
+              <div class="row m-auto mb-3">
+                  <div class="col-md-9">
+                     {{-- <div class="border-bottom border-top">
+                        <span style="font-family: Times New Roman, SansSerif;font-size: medium">
+                            <span style="color: purple">Updated Ongoing Anime Blogs</span>
+                            <span style="float: right">
+                                <a href="">
+                                    <small>
+                                        Read More
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                    </small>
+                                </a>
+                            </span>
+                        </span>
+                      </div>--}}
 
+                      @foreach($animes as $anime)
 
+                          <div class="col-md-3 mt-3">
+                              <img
+                                  style="border-radius: 3px"
+                                  width="100%"
+                                  src="{{ asset('images/anime_image_profile/' . $anime->anime_image_profile ) }}"
+                                  alt="Blog Anime Image">
+                          </div>
 
+                      @endforeach
+                  </div>
+                  <div class="col-md-3"></div>
 
-{{--          <div>--}}
-{{--              <div style="display: flex">--}}
-{{--                    <div class="row" style="margin: auto;position: relative">--}}
-
-{{--                  @foreach($animes as $anime)--}}
-{{--                      --}}
-{{--                      <div class="col-md-4 mb-4">--}}
-{{--                              <div class="card">--}}
-{{--                                  <div class="card-body">--}}
-{{--                                  <div>--}}
-{{--                                      <span><code><h4>{{ $anime['anime_title'] }}</h4></code></span>--}}
-{{--                                  </div>--}}
-
-
-{{--                                  </div>--}}
-
-{{--                              </div>--}}
-{{--                      </div>--}}
-
-{{--                     @endforeach--}}
-
-{{--                       </div>--}}
-{{--               </div>--}}
-{{--             </div>--}}
+              </div>
+          </div>
 
 
 
