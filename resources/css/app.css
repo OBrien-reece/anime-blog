@@ -197,6 +197,27 @@ sup {
     padding: 5px;
 }
 
+/* Bottom left text on home image*/
+.bottom-left {
+    position: absolute;
+    bottom: 1px;
+    color: white;
+    left: 16px;
+}
+
+/*Home image hover*/
+.image_hover {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.image_container:hover .image_hover {
+    opacity: 0.8;
+}
 
 
 

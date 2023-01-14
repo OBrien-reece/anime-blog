@@ -43,7 +43,7 @@
 
 
 
-          <div class="mt-1 border-bottom border-end border-top border-start ">
+          <div class="mt-1 border-bottom border-end border-top border-start" style="border-radius: 3px">
               <div class="row m-auto">
                   <div class="col-md-9">
                       <div class="border-bottom">
@@ -60,25 +60,61 @@
                           </div>
                       </div>
 
-                      @foreach($animes as $anime)
-                          <img
-                              width="100%"
-                              src=""
-                              alt="">
-                      @endforeach
+                      <div class="row">
+                          @foreach($animes as $anime)
+                              <div class="col-md-3 mt-2 mb-2 image_container">
+                                  <img
+                                      class="image_hover"
+                                      style="border-radius: 4px"
+                                      width="100%"
+                                      src="{{ asset('/images/anime_image_profile/' . $anime->anime_image_profile) }}"
+                                      alt="Anime Blog Canvas">
+                                  <small class="bottom-left">{{ $anime['anime_title'] }}</small>
+                              </div>
+                          @endforeach
+                      </div>
+
+                      <br>
+
+                      <div class="border-bottom">
+                          <div style="font-family: Times New Roman, SansSerif;font-size: medium">
+                              <span style="color: purple">Completed Anime - Blogs</span>
+                              <span style="float: right">
+                                    <a href="">
+                                        Read More
+                                        <small>
+                                            <i class="fa-solid fa-chevron-right"></i>
+                                        </small>
+                                    </a>
+                                </span>
+                          </div>
+                      </div>
+
+                      <div class="row">
+                          @foreach($animes as $anime)
+                              <div class="col-md-3 mt-2 mb-2 image_container">
+                                  <img
+                                      class="image_hover"
+                                      style="border-radius: 4px"
+                                      width="100%"
+                                      src="{{ asset('/images/anime_image_profile/' . $anime->anime_image_profile) }}"
+                                      alt="Anime Blog Canvas">
+                                  <small class="bottom-left">{{ $anime['anime_title'] }}</small>
+                              </div>
+                          @endforeach
+                      </div>
 
                   </div>
 
                   <div class="col-md-3 border-start">
                       <div class="border-bottom">
                           <span style="font-family: Times New Roman, SansSerif;font-size: medium">
-                                <span style="color: purple"></span>
+                                <span style="color: purple">sss</span>
                           </span>
                       </div>
                   </div>
               </div>
           </div>
-
 
 
 
