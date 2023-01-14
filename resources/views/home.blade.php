@@ -63,12 +63,14 @@
                       <div class="row">
                           @foreach($animes as $anime)
                               <div class="col-md-3 mt-2 mb-2 image_container">
-                                  <img
-                                      class="image_hover"
-                                      style="border-radius: 4px"
-                                      width="100%"
-                                      src="{{ asset('/images/anime_image_profile/' . $anime->anime_image_profile) }}"
-                                      alt="Anime Blog Canvas">
+                                  <a href="/blog/{{ $anime['slug'] }}">
+                                      <img
+                                          class="image_hover"
+                                          style="border-radius: 4px"
+                                          width="100%"
+                                          src="{{ asset('/images/anime_image_profile/' . $anime->anime_image_profile) }}"
+                                          alt="Anime Blog Canvas">
+                                  </a>
                                   <small class="bottom-left">{{ $anime['anime_title'] }}</small>
                               </div>
                           @endforeach
@@ -93,12 +95,14 @@
                       <div class="row">
                           @foreach($animes as $anime)
                               <div class="col-md-3 mt-2 mb-2 image_container">
-                                  <img
-                                      class="image_hover"
-                                      style="border-radius: 4px"
-                                      width="100%"
-                                      src="{{ asset('/images/anime_image_profile/' . $anime->anime_image_profile) }}"
-                                      alt="Anime Blog Canvas">
+                                  <a href="/blog/{{ $anime['slug'] }}">
+                                      <img
+                                          class="image_hover"
+                                          style="border-radius: 4px"
+                                          width="100%"
+                                          src="{{ asset('/images/anime_image_profile/' . $anime->anime_image_profile) }}"
+                                          alt="Anime Blog Canvas">
+                                  </a>
                                   <small class="bottom-left">{{ $anime['anime_title'] }}</small>
                               </div>
                           @endforeach
@@ -106,12 +110,21 @@
 
                   </div>
 
-                  <div class="col-md-3 border-start">
-                      <div class="border-bottom">
-                          <span style="font-family: Times New Roman, SansSerif;font-size: medium">
-                                <span style="color: purple">sss</span>
-                          </span>
+                  <div class="col-md-3 mt-1 border-start">
+                      <div class="jumbotron p-2 jumbotron-card">
+                          <h1 class="display-7" style="font-family: 'Times New Roman';">Most Read</h1>
+                          <div class="row">
+                              <div class="col-md-4 pull-right">
+                                  <img width="100%" height="70px" src="{{ URL('storage/luffy.jpg') }}" alt="">
+                              </div>
+                              <div class="col-md-8">
+                                  <span>Test1</span>
+                                  <br>
+                                  <span>Test2</span>
+                              </div>
+                          </div>
                       </div>
+                  </div>
                   </div>
               </div>
           </div>
