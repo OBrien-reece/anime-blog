@@ -15,7 +15,7 @@
       <div>
           <img src="{{ URL('storage/rmluffy.png') }}" alt="" class="background-img">
 
-          <div class="left-centered">
+          <div class="left-centered" style="margin-left: 80px;margin-top: 40px">
               <div>
                   <strong>
                           <h1 class="text-uppercase image-text anime-text">9anime : anime blog site</h1>
@@ -41,62 +41,40 @@
               </div>
           </div>
 
-              <div class="row">
-
-                  @foreach($animes as $anime)
-
-                      <div class="col-md-4 mb-4">
-                              <div class="card">
-                                  <div class="card-body">
-                                  <div>
-                                      <span><code><h4>{{ $anime['anime_title'] }}</h4></code></span>
-
-                                  </div>
-
-                                      <br>
-
-                                      <span class="card-text">
-                                      {!! Str::limit($anime["description"], 300) !!}
-                                  </span>
-
-                                      <br><br>
-
-                                      <div>
-                                          <span class="card-link">
-                                              <a href="/blog/{{ $anime['slug'] }}" class="btn-link">
-                                                  <strong>
-                                                      Read more &rarr;
-                                                  </strong>
-                                              </a>
-                                          </span>
-
-                                          {{--Show only the logged in user the Edit button to the blog he created--}}
 
 
-                                          @if(Auth::user() && Auth::user()->id === $anime['user_id'])
-                                              <div style="float: right">
-                                                  <span style="color: green;">
-                                                      <a href="/blog/{{ $anime['slug'] }}/edit">
-                                                          Edit
-                                                          <i class="fa-solid fa-pen-to-square"></i>
-                                                      </a>
-                                                  </span>
-                                              </div>
-                                          @endif
 
 
-                                      </div>
 
-                                  </div>
 
-                              </div>
-                      </div>
 
-                  @endforeach
+{{--          <div>--}}
+{{--              <div style="display: flex">--}}
+{{--                    <div class="row" style="margin: auto;position: relative">--}}
 
-              </div>
+{{--                  @foreach($animes as $anime)--}}
+{{--                      --}}
+{{--                      <div class="col-md-4 mb-4">--}}
+{{--                              <div class="card">--}}
+{{--                                  <div class="card-body">--}}
+{{--                                  <div>--}}
+{{--                                      <span><code><h4>{{ $anime['anime_title'] }}</h4></code></span>--}}
+{{--                                  </div>--}}
 
-      </div>
+
+{{--                                  </div>--}}
+
+{{--                              </div>--}}
+{{--                      </div>--}}
+
+{{--                     @endforeach--}}
+
+{{--                       </div>--}}
+{{--               </div>--}}
+{{--             </div>--}}
+
+
+
 
        <div class="row" style="margin-top: 20px">
            <div class="col-md-8">
@@ -132,11 +110,13 @@
                </div>
            </div>
 
-            <hr>
+    <hr>
 
 
        </div>
+</div>
 
+</div>
 
 <!-- FOOTER -->
 <footer class="w-100 py-4 flex-shrink-0">
