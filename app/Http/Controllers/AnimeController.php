@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Anime;
 use App\Models\BlogInfo;
+use App\Models\ViewCounter;
 use App\Http\Requests\ValidateAnimeBlogRequest;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\View\View;
 
 class AnimeController extends Controller
 {
@@ -91,7 +93,12 @@ class AnimeController extends Controller
      */
     public function show(Anime $anime)
     {
-//      dd($anime);
+//      dd($anime->id);
+        $anime_id = ViewCounter::where('anime_id', $anime->id)->first();
+
+        if($anime_id->exists()) {
+            dd($anime_id);
+        }
 
         return view('animeblog.show-blog', [
             'anime' => $anime

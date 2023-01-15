@@ -15,8 +15,14 @@ class Anime extends Model
 
     protected $fillable = ['anime_title','user_id','blog_title','description','slug','anime_image_profile'];
 
+    /*This Anime has many pieces of info about it*/
     public function blogInformation() {
         return $this->hasMany(BlogInfo::class);
+    }
+
+    /*This Anime has many views from users*/
+    public function viewCounter() {
+        return $this->hasMany(ViewCounter::class);
     }
 
     public function getRouteKeyName()
