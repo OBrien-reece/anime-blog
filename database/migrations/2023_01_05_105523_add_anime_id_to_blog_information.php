@@ -14,8 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::table('blog_information', function (Blueprint $table) {
-            $table->unsignedInteger('blog_id')->after('id');
-            $table->foreign('blog_id')->references('id')->on('anime')->cascadeOnDelete();
+            $table->unsignedInteger('anime_id')->after('id');
+            $table->foreign('anime_id')->references('id')->on('anime')->cascadeOnDelete();
         });
     }
 
@@ -27,7 +27,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('blog_information', function (Blueprint $table) {
-            $table->dropColumn('blog_id');
+            $table->dropColumn('anime_id');
         });
     }
 };
