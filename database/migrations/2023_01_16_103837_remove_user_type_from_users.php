@@ -13,13 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('anime', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('user_id');
-            $table->longText('description');
-            $table->dateTime('aired');
-            $table->longText('studio');
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('user_type');
         });
     }
 
@@ -30,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('anime');
+        Schema::table('users', function (Blueprint $table) {
+            //
+        });
     }
 };

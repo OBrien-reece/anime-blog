@@ -52,7 +52,7 @@ class AnimeController extends Controller
     {
         $request->validated();
 
-        $newFileName = time() . "-" . $request->name . '.' . $request->anime_image_profile->extension();
+        $newFileName = '9anime' . '-' . time() . '.' . $request->anime_image_profile->extension();
 
         $request->anime_image_profile->move(public_path('images/anime_image_profile'), $newFileName);
 
@@ -94,11 +94,11 @@ class AnimeController extends Controller
     public function show(Anime $anime)
     {
 //      dd($anime->id);
-        $anime_id = ViewCounter::where('anime_id', $anime->id)->first();
-
-        if($anime_id->exists()) {
-            dd($anime_id);
-        }
+//        $anime_id = ViewCounter::where('anime_id', $anime->id)->first();
+//
+//        if($anime_id->exists()) {
+//            dd($anime_id);
+//        }
 
         return view('animeblog.show-blog', [
             'anime' => $anime

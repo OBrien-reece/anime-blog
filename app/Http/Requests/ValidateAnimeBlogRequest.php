@@ -32,7 +32,7 @@ class ValidateAnimeBlogRequest extends FormRequest
             'genre' => ['required', new nameRegex],
             'licensors' => ['required', new nameRegex],
             'studio' => ['required', new nameRegex],
-            'anime_image_profile' => 'required | mimes:jpeg,jpg,png | max:5408'
+            'anime_image_profile' => 'required | image | mimes:jpeg,jpg,png | max:5048',
         ];
     }
 
@@ -41,8 +41,11 @@ class ValidateAnimeBlogRequest extends FormRequest
         return [
             'premiered.required' => 'Please insert the Anime premier season',
             'genre.required' => 'Please insert the anime genre',
-            'licensors.required' => 'Pleae insert the Anime licensor company(s) name',
-            'studio.required' => 'Please insert the Anime studio name'
+            'licensors.required' => 'Please insert the Anime licensor company name',
+            'studio.required' => 'Please insert the Anime studio name',
+            'anime_image_profile.max' => 'The file is too large',
+            'anime_image_profile.mimes' => 'The image must be of file type: jpeg, jpg, png .',
+            'anime_image_profile.image' => 'The file must be an image'
         ];
     }
 

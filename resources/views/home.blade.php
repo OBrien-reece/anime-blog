@@ -13,7 +13,7 @@
 <div class="container wrapper">
 
       <div>
-          <img src="{{ URL('storage/rmluffy.png') }}" alt="" class="background-img">
+          <img src="{{ URL('images/img/canvas.png') }}" height="60%" alt="" class="background-img">
 
           <div class="left-centered" style="margin-left: 80px;margin-top: 40px">
               <div>

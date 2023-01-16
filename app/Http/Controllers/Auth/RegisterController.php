@@ -56,7 +56,6 @@ class RegisterController extends Controller
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'fname' => ['required','min:2','max:15', new nameRegex],
             'lname' => ['required','min:2','max:15', new nameRegex],
-            'user_type' => ['required']
         ], [
             'fname.min' => 'The first name should be atleast 2 characters long',
             'lname.min' => 'The last name should be atleast 2 characters long',
@@ -78,7 +77,6 @@ class RegisterController extends Controller
             'lname' => $data['lname'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'user_type' => $data['user_type']
         ]);
     }
 }
