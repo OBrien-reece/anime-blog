@@ -25,7 +25,13 @@ class AnimeController extends Controller
     public function index()
     {
 
-//        $animes = Anime::all()->sortBy([ ['updated_at' , 'desc'], ['status'] ])->take(4);
+        $anime_blog_rankings = \DB::table('anime')
+                   ->join('view_counter', 'anime.id', 'view_counter.anime_id')
+                   ->join('blog_information', 'anime.id', 'blog_information.anime_id')
+                   ->select('anime.*', 'blog_information.*')
+                   ->orderByDesc('view_counter.view_counter')
+                   ->get()
+                   ->take(3);
 
         $ongoing_anime = \DB::table('anime')
                            ->join('blog_information', 'anime.id', '=', 'blog_information.anime_id')
@@ -47,7 +53,8 @@ class AnimeController extends Controller
 
         return view('/home', [
             'ongoing_anime' => $ongoing_anime,
-            'completed_anime' => $completed_anime
+            'completed_anime' => $completed_anime,
+            'blog_rankings' => $anime_blog_rankings
         ]);
     }
 
@@ -99,6 +106,10 @@ class AnimeController extends Controller
                 'licensors' => $request->input('licensors'),
                 'anime_id' => $anime_id
             ]);
+
+            ViewCounter::create([
+                'anime_id' => $anime_id
+            ]);
         }
 
         return redirect('/');
@@ -112,12 +123,10 @@ class AnimeController extends Controller
      */
     public function show(Anime $anime)
     {
-//      dd($anime->id);
-//        $anime_id = ViewCounter::where('anime_id', $anime->id)->first();
-//
-//        if($anime_id->exists()) {
-//            dd($anime_id);
-//        }
+
+        $idn = $anime->id;
+        $anime_id = ViewCounter::where('anime_id', $idn);
+        ViewCounter::where('anime_id', $idn)->increment('view_counter', 1);
 
         return view('animeblog.show-blog', [
             'anime' => $anime

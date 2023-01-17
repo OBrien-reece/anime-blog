@@ -61,7 +61,7 @@
                       </div>
 
                       <div class="row">
-                          @foreach($ongoing_anime as $anime)
+                          @forelse($ongoing_anime as $anime)
                               <div class="col-md-3 mt-2 mb-2 image_container">
                                   <a href="/blog/{{ $anime->slug }}">
                                       <img
@@ -73,12 +73,12 @@
                                   </a>
                                   <small class="bottom-left">{{ $anime->anime_title }}</small>
                               </div>
-                          @endforeach
+                          @empty
+                              <p style="padding: 20px;font-family: 'Times New Roman'">Updates will be made available soon</p>
+                          @endforelse
                       </div>
 
-                      <br>
-
-                      <div class="border-bottom">
+                      <div class="border-bottom mt-4">
                           <div style="font-family: Times New Roman, SansSerif;font-size: medium">
                               <span style="color: purple">Completed Anime - Blogs</span>
                               <span style="float: right">
@@ -93,7 +93,7 @@
                       </div>
 
                       <div class="row">
-                          @foreach($completed_anime as $anime)
+                          @forelse($completed_anime as $anime)
                               <div class="col-md-3 mt-2 mb-2 image_container">
                                   <a href="/blog/{{ $anime->slug }}">
                                       <img
@@ -105,7 +105,9 @@
                                   </a>
                                   <small class="bottom-left">{{ $anime->anime_title }}</small>
                               </div>
-                          @endforeach
+                          @empty
+                              <p style="padding: 20px;font-family: 'Times New Roman'">Updates will be made available soon</p>
+                          @endforelse
                       </div>
 
                   </div>
@@ -113,16 +115,31 @@
                   <div class="col-md-3 mt-1 border-start">
                       <div class="jumbotron p-2 jumbotron-card">
                           <h1 class="display-7" style="font-family: 'Times New Roman';">Most Read</h1>
+
+
+                          @forelse($blog_rankings as $branking)
                           <div class="row">
-                              <div class="col-md-4 pull-right">
-                                  <img width="100%" height="70px" src="{{ URL('storage/luffy.jpg') }}" alt="">
+                              <div class="col-md-4 mb-2 pull-right">
+                                  <img
+                                      width="100%"
+                                      height="70px"
+                                      src="{{ asset('images/anime_image_profile' . $branking->anime_image_profile) }}" alt="Blog canvas">
                               </div>
                               <div class="col-md-8">
-                                  <span>Test1</span>
+                                  <span style="font-family: 'Times New Roman'">
+                                      {{ $branking->anime_title }}
+                                  </span>
                                   <br>
-                                  <span>Test2</span>
+                                  <span style="font-family: 'Times New Roman'">
+                                      {{ $branking->type }}
+                                  </span>
                               </div>
                           </div>
+                          @empty
+                              <p style="font-family: 'Times New Roman';">No information at the moment</p>
+                          @endforelse
+
+
                       </div>
                   </div>
                   </div>
@@ -171,48 +188,6 @@
        </div>
 </div>
 
-</div>
-
-<!-- FOOTER -->
-<footer class="w-100 py-4 flex-shrink-0">
-    <div class="container py-4">
-        <div class="row gy-4 gx-5">
-            <div class="col-lg-4 col-md-6">
-                <h5 class="h1 text-white">FB.</h5>
-                <p class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-                <p class="small text-muted mb-0">&copy; Copyrights. All rights reserved. <a class="text-primary" href="#">Bootstrapious.com</a></p>
-            </div>
-            <div class="col-lg-2 col-md-6">
-                <h5 class="text-white mb-3">Quick links</h5>
-                <ul class="list-unstyled text-muted">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Get started</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-2 col-md-6">
-                <h5 class="text-white mb-3">Quick links</h5>
-                <ul class="list-unstyled text-muted">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Get started</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <h5 class="text-white mb-3">Newsletter</h5>
-                <p class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-                <form action="#">
-                    <div class="input-group mb-3">
-                        <input class="form-control" type="text" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
-                        <button class="btn btn-primary" id="button-addon2" type="button"><i class="fas fa-paper-plane"></i></button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</footer>
 </div>
 
 @endsection
