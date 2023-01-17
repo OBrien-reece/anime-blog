@@ -119,11 +119,12 @@
 
                           @forelse($blog_rankings as $branking)
                           <div class="row">
-                              <div class="col-md-4 mb-2 pull-right">
+                              <div class="col-md-4 mb-4 pull-right">
                                   <img
-                                      width="100%"
-                                      height="70px"
-                                      src="{{ asset('images/anime_image_profile' . $branking->anime_image_profile) }}" alt="Blog canvas">
+                                      style="border-radius: 3px"
+                                      width="130%"
+                                      height="100%"
+                                      src="{{ asset('images/anime_image_profile/' . $branking->anime_image_profile) }}" alt="Blog canvas">
                               </div>
                               <div class="col-md-8">
                                   <span style="font-family: 'Times New Roman'">
