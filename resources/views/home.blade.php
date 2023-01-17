@@ -61,9 +61,9 @@
                       </div>
 
                       <div class="row">
-                          @foreach($animes as $anime)
+                          @foreach($ongoing_anime as $anime)
                               <div class="col-md-3 mt-2 mb-2 image_container">
-                                  <a href="/blog/{{ $anime['slug'] }}">
+                                  <a href="/blog/{{ $anime->slug }}">
                                       <img
                                           class="image_hover"
                                           style="border-radius: 4px"
@@ -71,7 +71,7 @@
                                           src="{{ asset('/images/anime_image_profile/' . $anime->anime_image_profile) }}"
                                           alt="Anime Blog Canvas">
                                   </a>
-                                  <small class="bottom-left">{{ $anime['anime_title'] }}</small>
+                                  <small class="bottom-left">{{ $anime->anime_title }}</small>
                               </div>
                           @endforeach
                       </div>
@@ -93,9 +93,9 @@
                       </div>
 
                       <div class="row">
-                          @foreach($animes as $anime)
+                          @foreach($completed_anime as $anime)
                               <div class="col-md-3 mt-2 mb-2 image_container">
-                                  <a href="/blog/{{ $anime['slug'] }}">
+                                  <a href="/blog/{{ $anime->slug }}">
                                       <img
                                           class="image_hover"
                                           style="border-radius: 4px"
@@ -103,7 +103,7 @@
                                           src="{{ asset('/images/anime_image_profile/' . $anime->anime_image_profile) }}"
                                           alt="Anime Blog Canvas">
                                   </a>
-                                  <small class="bottom-left">{{ $anime['anime_title'] }}</small>
+                                  <small class="bottom-left">{{ $anime->anime_title }}</small>
                               </div>
                           @endforeach
                       </div>

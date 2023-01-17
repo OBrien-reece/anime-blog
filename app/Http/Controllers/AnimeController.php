@@ -25,10 +25,29 @@ class AnimeController extends Controller
     public function index()
     {
 
-        $animes = Anime::all()->sortByDesc('created_at')->take(4);
+//        $animes = Anime::all()->sortBy([ ['updated_at' , 'desc'], ['status'] ])->take(4);
+
+        $ongoing_anime = \DB::table('anime')
+                           ->join('blog_information', 'anime.id', '=', 'blog_information.anime_id')
+                           ->select('anime.*', 'blog_information.status')
+                           ->where('status', 'Ongoing')
+                           ->orderByDesc('updated_at')
+                           ->get()
+                           ->take(4);
+
+        $completed_anime = \DB::table('anime')
+                            ->join('blog_information' , 'anime.id', 'blog_information.anime_id')
+                            ->select('anime.*', 'blog_information.status')
+                            ->where('status', 'Completed')
+                            ->orderByDesc('updated_at')
+                            ->get()
+                            ->take(4);
+
+//        dd($animes);
 
         return view('/home', [
-            'animes' => $animes
+            'ongoing_anime' => $ongoing_anime,
+            'completed_anime' => $completed_anime
         ]);
     }
 
