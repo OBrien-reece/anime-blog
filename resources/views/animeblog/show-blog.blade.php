@@ -78,7 +78,19 @@
                 @if(Auth::user() && Auth::user()->id === $anime->user_id)
                     <div class="mt-2 mb-4 border-bottom">
                         <span style="font-family: 'Times New Roman'">
-                            Being the owner of the article, you have the rights to:
+                            Actions:
+                            <ul style="list-style-type: none">
+                                <li style="color: green">
+                                    <a href="/blog/{{ $anime->slug }}/edit">
+                                        Edit
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
+                                </li>
+                                <li style="color: red">
+                                    Delete
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </li>
+                            </ul>
                         </span>
                     </div>
                 @endif

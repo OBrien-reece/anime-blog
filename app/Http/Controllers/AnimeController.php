@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ValidateUpdateBlogRequest;
 use App\Models\Anime;
 use App\Models\BlogInfo;
 use App\Models\ViewCounter;
@@ -155,7 +156,7 @@ class AnimeController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function update(ValidateAnimeBlogRequest  $request, $id)
+    public function update(ValidateUpdateBlogRequest  $request, $id)
     {
         $request->validated();
 
@@ -201,7 +202,7 @@ class AnimeController extends Controller
             ]);
         }
 
-        return redirect('/');
+        return redirect()->to('/blog/' . $update_data->slug);
     }
     /**
      * Remove the specified resource from storage.

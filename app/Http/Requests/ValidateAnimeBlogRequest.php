@@ -32,7 +32,7 @@ class ValidateAnimeBlogRequest extends FormRequest
             'genre' => ['required', new nameRegex],
             'licensors' => ['required', new nameRegex],
             'studio' => ['required', new nameRegex],
-            'anime_image_profile' => 'required | image | mimes:jpeg,jpg,png | max:5048',
+            'anime_image_profile' => 'required | image | max:5048 |',
         ];
     }
 

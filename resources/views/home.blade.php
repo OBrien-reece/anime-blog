@@ -120,7 +120,7 @@
                           @forelse($blog_rankings as $branking)
                           <div class="row">
                               <div class="col-md-6 mb-4 pull-right">
-                                  <a href="/blog/{{ $anime->slug }}/">
+                                  <a href="/blog/{{ $branking->slug }}/">
                                   <img
                                       style="border-radius: 3px"
                                       width="100%"

@@ -210,6 +210,9 @@
                     </div>
 
                     <div class="form-group">
+                        <span style="font-family: 'Times New Roman';color: green">
+                            You can choose to update the image, or retain the previous image. If so, leave blank
+                        </span>
                         <input type="file" name="anime_image_profile" class="form-control">
                         @if($errors->any())
 

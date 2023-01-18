@@ -25,9 +25,9 @@
                          @if($errors->any())
 
                             @if($errors->has('anime_title'))
-                                <div class="invalid-feedback">{{ $errors->first('anime_title') }}</div>
+                                <div style="font-family: 'Times New Roman'" class="invalid-feedback">{{ $errors->first('anime_title') }}</div>
                             @else
-                                <div class="text-success" style="color: green">{{ __("Looks good!") }}</div>
+                                <div class="text-success" style="color: green;font-family: 'Times New Roman'">{{ __("Looks good!") }}</div>
                             @endif
 
                         @endif
@@ -48,9 +48,9 @@
                         @if($errors->any())
 
                             @if($errors->has('blog_title'))
-                                <div class="text-danger">{{ $errors->first('blog_title') }}</div>
+                                <div style="font-family: 'Times New Roman'" class="text-danger">{{ $errors->first('blog_title') }}</div>
                             @else
-                                <div class="text-success" style="color: green">{{ __("Looks good!") }}</div>
+                                <div class="text-success" style="color: green;font-family: 'Times New Roman'">{{ __("Looks good!") }}</div>
                             @endif
 
                         @endif
@@ -62,9 +62,9 @@
                     @if($errors->any())
 
                         @if($errors->has('description'))
-                            <div class="text-danger">{{ $errors->first('description') }}</div>
+                            <div style="font-family: 'Times New Roman'" class="text-danger">{{ $errors->first('description') }}</div>
                         @else
-                            <div class="text-success" style="color: green">{{ __("Looks good!") }}</div>
+                            <div class="text-success" style="color: green;font-family: 'Times New Roman'">{{ __("Looks good!") }}</div>
                         @endif
 
                     @endif
@@ -120,9 +120,9 @@
                                     @if($errors->any())
 
                                         @if($errors->has('premiered'))
-                                            <div class="text-danger">{{ $errors->first('premiered') }}</div>
+                                            <div style="font-family: 'Times New Roman'" class="text-danger">{{ $errors->first('premiered') }}</div>
                                         @else
-                                            <div class="text-success" style="color: green">{{ __("Looks good!") }}</div>
+                                            <div class="text-success" style="color: green;font-family: 'Times New Roman'">{{ __("Looks good!") }}</div>
                                         @endif
 
                                     @endif
@@ -143,9 +143,9 @@
                                     @if($errors->any())
 
                                         @if($errors->has('genre'))
-                                            <div class="text-danger">{{ $errors->first('genre') }}</div>
+                                            <div style="font-family: 'Times New Roman'" class="text-danger">{{ $errors->first('genre') }}</div>
                                         @else
-                                            <div class="text-success" style="color: green">{{ __("Looks good!") }}</div>
+                                            <div class="text-success" style="color: green;font-family: 'Times New Roman'">{{ __("Looks good!") }}</div>
                                         @endif
 
                                     @endif
@@ -166,9 +166,9 @@
                                     @if($errors->any())
 
                                         @if($errors->has('licensors'))
-                                            <div class="text-danger">{{ $errors->first('licensors') }}</div>
+                                            <div style="font-family: 'Times New Roman'" class="text-danger">{{ $errors->first('licensors') }}</div>
                                         @else
-                                            <div class="text-success" style="color: green">{{ __("Looks good!") }}</div>
+                                            <div class="text-success" style="color: green;font-family: 'Times New Roman'">{{ __("Looks good!") }}</div>
                                         @endif
 
                                     @endif
@@ -189,9 +189,9 @@
                                 @if($errors->any())
 
                                     @if($errors->has('studio'))
-                                        <div class="text-danger">{{ $errors->first('studio') }}</div>
+                                        <div style="font-family: 'Times New Roman'" class="text-danger">{{ $errors->first('studio') }}</div>
                                     @else
-                                        <div class="text-success" style="color: green">{{ __("Looks good!") }}</div>
+                                        <div class="text-success" style="color: green;font-family: 'Times New Roman'">{{ __("Looks good!") }}</div>
                                     @endif
 
                                 @endif
@@ -206,9 +206,14 @@
                         @if($errors->any())
 
                             @if($errors->has('anime_image_profile'))
-                                <div class="text-danger">{{ $errors->first('anime_image_profile') }}</div>
+
+                                @foreach ($errors->get('anime_image_profile') as $message)
+                                    <span style="font-family: 'Times New Roman'" class="text-danger">{{ $message }}</span>
+                                    <br>
+                                @endforeach
+
                             @else
-                                <div class="text-success" style="color: green">{{ __("Looks good!") }}</div>
+                                <div class="text-success" style="color: green;font-family: 'Times New Roman'">{{ __("Looks good!") }}</div>
                             @endif
 
                         @endif
@@ -218,19 +223,7 @@
 
                 </form>
             </div>
-{{--            <div class="col-md-3 mt-5">--}}
 
-{{--                @if($errors->any())--}}
-{{--                    <div class="m-auto text-danger">--}}
-{{--                        @foreach($errors->all() as $error)--}}
-{{--                            <li class="list-none" style="list-style-type: none">--}}
-{{--                                <strong>{{ $error }}</strong>--}}
-{{--                            </li>--}}
-{{--                        @endforeach--}}
-{{--                    </div>--}}
-{{--                @endif--}}
-
-{{--            </div>--}}
         </div>
     </div>
 @endsection
