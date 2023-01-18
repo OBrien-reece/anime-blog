@@ -20,7 +20,7 @@
                     </span>
                 </div>
 
-                <div class="anime_info">
+                <div class="anime_info border-bottom" style="padding: 20px;font-family: 'Times New Roman'">
 
                 @foreach($anime->blogInformation as $blogInfo)
 
@@ -74,10 +74,20 @@
 
                 </div>
 
+
+                @if(Auth::user() && Auth::user()->id === $anime->user_id)
+                    <div class="mt-2 mb-4 border-bottom">
+                        <span style="font-family: 'Times New Roman'">
+                            Being the owner of the article, you have the rights to:
+                        </span>
+                    </div>
+                @endif
+
+
             </div>
             <div class="col-sm-9 col-md-9 border-start">
-
-                <h2 class="mt-3" style="font-family: 'Times New Roman'">
+                <img width="100%" src="{{ asset('images/anime_image_profile/' . $anime->anime_image_profile) }}" alt="">
+                <h2 class="mt-3" style="font-family: 'Times New Roman';text-align: center">
                     {{ $anime['blog_title'] }}
                 </h2>
 
@@ -87,5 +97,7 @@
         </div>
     </div>
 </div>
+
+@include('layouts.footer')
 
 @endsection

@@ -216,8 +216,18 @@ sup {
 }
 
 .image_container:hover .image_hover {
-    opacity: 0.8;
+    opacity: 0.7;
 }
 
+/*Anime blog showall css*/
+.image_card_blog {
+    box-shadow: 5px 5px 10px rebeccapurple;
+    overflow: hidden;
+}
+
+.image_card_blog:hover .image_anime_blog {
+    transform: scale(1.1) rotate(-3deg);
+    transition: .2s;
+}
 
 

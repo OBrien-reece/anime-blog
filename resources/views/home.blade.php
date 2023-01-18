@@ -50,7 +50,7 @@
                           <div style="font-family: Times New Roman, SansSerif;font-size: medium">
                                 <span style="color: purple">Ongoing Anime Blogs</span>
                                 <span style="float: right">
-                                    <a href="">
+                                    <a href="/ongoing_anime_blogs">
                                         Read More
                                         <small>
                                             <i class="fa-solid fa-chevron-right"></i>
@@ -114,19 +114,23 @@
 
                   <div class="col-md-3 mt-1 border-start">
                       <div class="jumbotron p-2 jumbotron-card">
-                          <h1 class="display-7" style="font-family: 'Times New Roman';">Most Read</h1>
+                          <h4 class="display-10" style="font-family: 'Times New Roman';">Most read articles</h4>
 
 
                           @forelse($blog_rankings as $branking)
                           <div class="row">
-                              <div class="col-md-4 mb-4 pull-right">
+                              <div class="col-md-6 mb-4 pull-right">
+                                  <a href="/blog/{{ $anime->slug }}/">
                                   <img
                                       style="border-radius: 3px"
-                                      width="130%"
-                                      height="100%"
-                                      src="{{ asset('images/anime_image_profile/' . $branking->anime_image_profile) }}" alt="Blog canvas">
+                                      width="100%"
+                                      class="responsive"
+                                      height="auto"
+                                      src="{{ asset('images/anime_image_profile/' . $branking->anime_image_profile) }}"
+                                      alt="Blog canvas">
+                                  </a>
                               </div>
-                              <div class="col-md-8">
+                              <div class="col-md-6">
                                   <span style="font-family: 'Times New Roman'">
                                       {{ $branking->anime_title }}
                                   </span>
@@ -190,6 +194,9 @@
 </div>
 
 </div>
+
+
+    @include('layouts.footer')
 
 @endsection
 
