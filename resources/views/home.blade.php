@@ -50,7 +50,7 @@
                           <div style="font-family: Times New Roman, SansSerif;font-size: medium">
                                 <span style="color: purple">Ongoing Anime Blogs</span>
                                 <span style="float: right">
-                                    <a href="/ongoing_anime_blogs">
+                                    <a href="{{route('ongoing')}}">
                                         Read More
                                         <small>
                                             <i class="fa-solid fa-chevron-right"></i>
@@ -82,7 +82,7 @@
                           <div style="font-family: Times New Roman, SansSerif;font-size: medium">
                               <span style="color: purple">Completed Anime - Blogs</span>
                               <span style="float: right">
-                                    <a href="">
+                                    <a href="{{ route('completed') }}">
                                         Read More
                                         <small>
                                             <i class="fa-solid fa-chevron-right"></i>

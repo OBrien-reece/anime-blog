@@ -27,6 +27,8 @@ Route::get('/blog/{anime}/edit', [AnimeController::class, 'edit']);
 
 Route::resource('/character', AnimeCharacterController::class);
 
-Route::get('/ongoing_anime_blogs', [ViewAllController::class, 'show_ongoing']);
+Route::get('/ongoing_anime_blogs', [ViewAllController::class, 'show_ongoing'])->name('ongoing');
+
+Route::get('/completed_anime_blogs', [ViewAllController::class, 'show_completed'])->name('completed');
 
 //Route::get('/home', [App\Http\Controllers\AnimeController::class, 'index'])->name('home');

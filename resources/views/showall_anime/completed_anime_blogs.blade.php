@@ -14,27 +14,27 @@
 
                     <div class="row">
 
-                        @forelse($ongoing_anime as $ongoing)
+                        @forelse($completed_anime as $completed)
 
                             <div class="col-md-4 col-lg-3 col-sm-4 mt-2 mb-2">
                                 <div class="card h-100 image_card_blog">
-                                    <a href="/blog/{{ $ongoing->slug }}">
+                                    <a href="/blog/{{ $completed->slug }}">
                                         <img
                                             class="image_anime_blog"
                                             style="border-radius: 3px"
                                             width="100%"
-                                            src="{{ asset('images/anime_image_profile/' . $ongoing->anime_image_profile) }}"
+                                            src="{{ asset('images/anime_image_profile/' . $completed->anime_image_profile) }}"
                                             alt="Ongoing Anime Blog Canvas">
-                                    <div class="card-body">
-                                        <div class="intro text-dark">
-                                            <h4 style="font-family: 'Times New Roman';color: purple">
-                                                {{ $ongoing->anime_title }}
-                                            </h4>
-                                            <span style="font-family: 'Times New Roman'">
-                                                {{ $ongoing->blog_title }}
+                                        <div class="card-body">
+                                            <div class="intro text-dark">
+                                                <h4 style="font-family: 'Times New Roman';color: purple">
+                                                    {{ $completed->anime_title }}
+                                                </h4>
+                                                <span style="font-family: 'Times New Roman'">
+                                                {{ $completed->blog_title }}
                                             </span>
+                                            </div>
                                         </div>
-                                    </div>
                                     </a>
                                 </div>
                             </div>
@@ -56,5 +56,5 @@
 
 
 
-{{--    @include('layouts.footer')--}}
+    {{--    @include('layouts.footer')--}}
 @endsection

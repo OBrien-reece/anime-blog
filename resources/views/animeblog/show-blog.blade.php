@@ -98,8 +98,12 @@
 
             </div>
             <div class="col-sm-9 col-md-9 border-start">
-                <img width="100%" src="{{ asset('images/anime_image_profile/' . $anime->anime_image_profile) }}" alt="">
-                <h2 class="mt-3" style="font-family: 'Times New Roman';text-align: center">
+                <img
+                    style="border-bottom-left-radius: 3px;border-bottom-right-radius: 3px"
+                    width="100%"
+                     src="{{ asset('images/anime_image_profile/' . $anime->anime_image_profile) }}"
+                     alt="">
+                <h2 class="mt-3 border-bottom" style="font-family: 'Times New Roman';text-align: center">
                     {{ $anime['blog_title'] }}
                 </h2>
 

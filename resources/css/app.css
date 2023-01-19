@@ -200,9 +200,9 @@ sup {
 /* Bottom left text on home image*/
 .bottom-left {
     position: absolute;
-    bottom: 1px;
+    top: 8px;
+    right: 16px;
     color: white;
-    left: 16px;
 }
 
 /*Home image hover*/
@@ -216,7 +216,7 @@ sup {
 }
 
 .image_container:hover .image_hover {
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 /*Anime blog showall css*/
@@ -230,4 +230,8 @@ sup {
     transition: .2s;
 }
 
+span,
+p {
+    font-family: "Times New Roman";
+}
 
