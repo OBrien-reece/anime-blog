@@ -211,9 +211,18 @@ sup {
     display: block;
     width: 100%;
     height: auto;
-    transition: .5s ease;
+    transition: 2s ease;
     backface-visibility: hidden;
 }
+.image_hover:hover {
+    transform: scale(1.1);
+}
+
+/*.overflow_class {*/
+/*    overflow: hidden;*/
+/*    position: relative;*/
+/*    z-index: 1;*/
+/*}*/
 
 .image_container:hover .image_hover {
     opacity: 0.8;

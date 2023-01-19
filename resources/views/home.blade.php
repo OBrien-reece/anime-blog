@@ -94,7 +94,7 @@
 
                       <div class="row">
                           @forelse($completed_anime as $anime)
-                              <div class="col-md-3 mt-2 mb-2 image_container">
+                              <div class="col-md-3 mt-3 mb-2 image_container">
                                   <a href="/blog/{{ $anime->slug }}">
                                       <img
                                           class="image_hover"
