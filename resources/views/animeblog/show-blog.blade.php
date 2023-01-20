@@ -3,8 +3,7 @@
 @section('content')
 
 <div class="container">
-    <div class="container-fluid">
-        <div class="row mt-3 border-top border-start border-end">
+        <div class="row mt-3 border-top border-start border-end border-bottom">
             <div class="col-sm-3 col-md-3 mt-2">
                 <img
                     class="image_avatar"
@@ -87,8 +86,16 @@
                                     </a>
                                 </li>
                                 <li style="color: red">
-                                    Delete
-                                    <i class="fa-solid fa-trash-can"></i>
+                                    <form action="/blog/{{ $anime->slug }}" method="POST">
+{{--                                        @method('DELETE')--}}
+                                        @csrf
+                                            <button
+                                                style="text-decoration:none;color: red"
+                                                class="btn btn-link">
+                                                Delete
+                                                <i class="fa-solid fa-trash-can"></i>
+                                            </button>
+                                    </form>
                                 </li>
                             </ul>
                         </span>
@@ -111,8 +118,45 @@
 
             </div>
         </div>
+
+        <div class="row m-auto mb-2">
+                <div class="col-md-8 border-start border-end border-bottom">
+                    <div style="padding-top: 10px">
+                        <strong>
+                            <span style="color: purple" class="border-bottom">Recent Comments</span>
+                        </strong>
+                        <div class="row">
+                            <div class="col-md-2">Lorem ipsum dolor sit.</div>
+                            <div class="col-md-10">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias animi ea facilis fugit laudantium numquam officiis quod rerum vel voluptatum!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 border-end border-bottom" style="padding-top: 10px">
+                    <strong>
+                        <span style="color: purple" class="border-bottom">If interested, Please comment below</span>
+                    </strong>
+
+                    <br>
+
+                    <form action="" method="POST">
+                        <textarea name="" class="form-control" id="" cols="30" rows="4"></textarea>
+{{--                        <br>--}}
+                        <strong>
+                            <a
+                                style="text-decoration: none;color: purple;font-family: 'Times New Roman'"
+                                href=""
+                                class="btn-link">
+                                Post Comment
+                            </a>
+                        </strong>
+                    </form>
+
+                </div>
+        </div>
+
     </div>
-</div>
 
 @include('layouts.footer')
 

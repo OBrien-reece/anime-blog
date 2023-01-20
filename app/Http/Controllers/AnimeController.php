@@ -32,7 +32,7 @@ class AnimeController extends Controller
                    ->select('anime.*', 'blog_information.*')
                    ->orderByDesc('view_counter.view_counter')
                    ->get()
-                   ->take(3);
+                   ->take(5);
 
         $ongoing_anime = \DB::table('anime')
                            ->join('blog_information', 'anime.id', '=', 'blog_information.anime_id')
@@ -40,7 +40,7 @@ class AnimeController extends Controller
                            ->where('status', 'Ongoing')
                            ->orderByDesc('updated_at')
                            ->get()
-                           ->take(4);
+                           ->take(8);
 
         $completed_anime = \DB::table('anime')
                             ->join('blog_information' , 'anime.id', 'blog_information.anime_id')
@@ -212,6 +212,6 @@ class AnimeController extends Controller
      */
     public function destroy($id)
     {
-        //
+//        $data_to_be_deleted = Anime::find($id);
     }
 }
