@@ -6,6 +6,7 @@ use App\Http\Requests\ValidateUpdateBlogRequest;
 use App\Models\Anime;
 use App\Models\BlogInfo;
 use App\Models\ViewCounter;
+use App\Models\Comment;
 use App\Http\Requests\ValidateAnimeBlogRequest;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
@@ -129,8 +130,16 @@ class AnimeController extends Controller
         $anime_id = ViewCounter::where('anime_id', $idn);
         ViewCounter::where('anime_id', $idn)->increment('view_counter', 1);
 
+//        $comments = Comment::all()->sortByDesc('updated_at');
+        $comments = \DB::table('users')
+                     ->join('comments', 'users.id', 'comments.user_id')
+                     ->select('users.fname', 'users.lname', 'comments.*')
+                     ->orderByDesc('created_at')
+                     ->get();
+
         return view('animeblog.show-blog', [
-            'anime' => $anime
+            'anime' => $anime,
+            'comments' => $comments
         ]);
 
     }

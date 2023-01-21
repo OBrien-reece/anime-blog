@@ -44,7 +44,7 @@ class CommentController extends Controller
 
         $blog_page = Anime::find($request->input('anime_id'));
 
-        return redirect('/');
+        return redirect('/blog/' . $blog_page->slug);
     }
 
     /**

@@ -121,16 +121,33 @@
 
         <div class="row m-auto mb-2">
                 <div class="col-md-8 border-start border-end border-bottom">
-                    <div style="padding-top: 10px">
-                        <strong>
-                            <span style="color: purple" class="border-bottom">Recent Comments</span>
-                        </strong>
-                        <div class="row">
-                            <div class="col-md-2">Lorem ipsum dolor sit.</div>
-                            <div class="col-md-10">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias animi ea facilis fugit laudantium numquam officiis quod rerum vel voluptatum!
+                    <strong>
+                        <span style="color: purple" class="border-bottom">Recent Comments</span>
+                    </strong>
+                    <div
+                        style="padding-top: 10px;max-height: 300px;overflow-y: auto; overflow-x: hidden;">
+
+                        @forelse($comments as $comment)
+                            <div class="row"">
+                                <div class="col-md-1">
+                                    <img
+                                        style="border-radius: 3px"
+                                        src="https://picsum.photos/52"
+                                         alt="Image placeholder">
+                                </div>
+                                <div class="col-md-11">
+                                <span>
+                                    {{ $comment->comments }}
+                                </span>
+                                </div>
                             </div>
-                        </div>
+                            <hr>
+                        @empty
+                            <div class="text-center">
+                                <span>No comments to be displayed yet</span>
+                            </div>
+                        @endforelse
+
                     </div>
                 </div>
                 <div class="col-md-4 border-end border-bottom" style="padding-top: 10px">
@@ -158,7 +175,6 @@
         </div>
 
     </div>
-
 @include('layouts.footer')
 
 @endsection
