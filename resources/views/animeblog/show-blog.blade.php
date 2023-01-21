@@ -124,8 +124,7 @@
                     <strong>
                         <span style="color: purple" class="border-bottom">Recent Comments</span>
                     </strong>
-                    <div
-                        style="padding-top: 10px;max-height: 300px;overflow-y: auto; overflow-x: hidden;">
+                    <div class="divHover">
 
                         @forelse($comments as $comment)
                             <div class="row"">

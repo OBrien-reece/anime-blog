@@ -132,9 +132,11 @@ class AnimeController extends Controller
 
 //        $comments = Comment::all()->sortByDesc('updated_at');
         $comments = \DB::table('users')
-                     ->join('comments', 'users.id', 'comments.user_id')
-                     ->select('users.fname', 'users.lname', 'comments.*')
-                     ->orderByDesc('created_at')
+                     ->join('anime', 'users.id', 'anime.user_id')
+                     ->leftJoin('comments', 'anime.id', 'comments.anime_id')
+                     ->select('users.fname', 'users.lname', 'anime.*', 'comments.*')
+                     ->where('anime.id', '=' , $idn)
+                     ->orderByDesc('comments.created_at')
                      ->get();
 
         return view('animeblog.show-blog', [
