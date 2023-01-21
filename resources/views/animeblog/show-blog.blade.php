@@ -140,16 +140,17 @@
 
                     <br>
 
-                    <form action="" method="POST">
-                        <textarea name="" class="form-control" id="" cols="30" rows="4"></textarea>
+                    <form action="/comment" method="POST">
+                        @csrf
+                        <input type="hidden" name="anime_id" value="{{ $anime['id'] }}">
+                        <textarea required name="comment" class="form-control" id="" cols="30" rows="4"></textarea>
 {{--                        <br>--}}
                         <strong>
-                            <a
+                            <button
                                 style="text-decoration: none;color: purple;font-family: 'Times New Roman'"
-                                href=""
-                                class="btn-link">
+                                class="btn btn-link">
                                 Post Comment
-                            </a>
+                            </button>
                         </strong>
                     </form>
 

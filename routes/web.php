@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AnimeController;
 use App\Http\Controllers\ViewAllController;
+use App\Http\Controllers\CommentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,3 +28,5 @@ Route::get('/blog/{anime}/edit', [AnimeController::class, 'edit']);
 Route::get('/ongoing_anime_blogs', [ViewAllController::class, 'show_ongoing'])->name('ongoing');
 
 Route::get('/completed_anime_blogs', [ViewAllController::class, 'show_completed'])->name('completed');
+
+Route::resource('/comment', CommentController::class);
