@@ -70,12 +70,12 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="nav-item nav-link navLink {{ request()->is('about') ? 'active' : '' }}">
+                            <a href="/about" class="nav-item nav-link navLink {{ request()->is('pages') ? 'active' : '' }}">
                                 About
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="nav-item nav-link navLink {{ request()->is('contact') ? 'active' : '' }}">
+                            <a href="/contact_us" class="nav-item nav-link navLink {{ request()->is('contact') ? 'active' : '' }}">
                                 Contact Us
                             </a>
                         </li>

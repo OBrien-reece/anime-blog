@@ -15,7 +15,7 @@ class Anime extends Model
 
     protected $fillable = ['anime_title','user_id','blog_title','description','slug','anime_image_profile'];
 
-    /*This Anime has many pieces of info about it*/
+    /*This Anime has many pieces of info pages it*/
     public function blogInformation() {
         return $this->hasMany(BlogInfo::class);
     }
