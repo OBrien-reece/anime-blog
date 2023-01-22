@@ -60,22 +60,34 @@
 
                         {{--Navbar Items--}}
                         <li>
-                            <a href="/blog" class="nav-item nav-link navLink {{ request()->is('/') ? 'active' : '' }} {{ request()->is('home') ? 'active' : '' }} {{ request()->is('blog') ? 'active' : '' }}">
+                            <a
+                                href="/blog"
+                                style="{{ request()->is('/', 'home', 'blog') ? 'color:red' : '' }}"
+                                class="nav-item nav-link navLink {{ request()->is('/') ? 'active' : '' }} {{ request()->is('home') ? 'active' : '' }} {{ request()->is('blog') ? 'active' : '' }}">
                                 Home
                             </a>
                         </li>
                         <li>
-                            <a href="/blog/create" class="nav-item nav-link navLink {{ request()->is('*/create') ? 'active' : '' }}">
+                            <a
+                               href="/blog/create"
+                               style="{{ request()->is('*/create') ? 'color:red' : '' }}"
+                               class="nav-item nav-link navLink {{ request()->is('*/create') ? 'active' : '' }}">
                                 Create Blog
                             </a>
                         </li>
                         <li>
-                            <a href="/about" class="nav-item nav-link navLink {{ request()->is('pages') ? 'active' : '' }}">
+                            <a
+                                href="/about"
+                                style="{{ request()->is('about') ? 'color:red' : '' }}"
+                                class="nav-item nav-link navLink {{ request()->is('about') ? 'active' : '' }}">
                                 About
                             </a>
                         </li>
                         <li>
-                            <a href="/contact_us" class="nav-item nav-link navLink {{ request()->is('contact') ? 'active' : '' }}">
+                            <a
+                                href="/contact_us"
+                                style="{{ request()->is('contact_us') ? 'color:red' : '' }}"
+                                class="nav-item nav-link navLink {{ request()->is('contact_us') ? 'active' : '' }}">
                                 Contact Us
                             </a>
                         </li>

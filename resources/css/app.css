@@ -3,7 +3,7 @@
 }
 
 /*styling active nav bar link */
-.navbar-nav .navLink.active {
+.nav-link.active {
     color: red;
 }
 
