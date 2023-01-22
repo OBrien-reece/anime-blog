@@ -26,6 +26,12 @@
                 <a href="#">
                     <i class="fa-brands fa-reddit"></i>
                 </a>
+                <a href="#">
+                    <i class="fa-brands fa-pinterest"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
             </span>
         </div>
     </div>

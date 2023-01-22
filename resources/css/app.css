@@ -244,8 +244,10 @@ sup {
 }
 
 span,
-p {
+p,
+label {
     font-family: "Times New Roman";
+    color: purple;
 }
 
 .divHover {
@@ -257,4 +259,15 @@ p {
 .divHover:hover {
     overflow-y: auto;
     overflow-x: hidden;
+}
+
+/*custom file uplad button*/
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
 }
