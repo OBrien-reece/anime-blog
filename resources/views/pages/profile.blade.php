@@ -7,7 +7,7 @@
                     @if(Session::has('success'))
                         <div class="col-md-4 m-auto alert alert-dismissible alert-danger">
                             <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-                            Profile Image updated successfully
+                            <span>{{ session('success') }}</span>
                         </div>
                     @endif
 

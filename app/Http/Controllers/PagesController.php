@@ -79,7 +79,7 @@ class PagesController extends Controller
 
         $user->profile_image = $new_file_name;
         if ($user->save()) {
-            return redirect()->route('profile')->with('success', 'Blog Created successfully');
+            return redirect()->route('profile')->with('success', 'Profile Image updated successfully');
         }
     }
 
