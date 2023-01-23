@@ -126,15 +126,16 @@
                     </strong>
                     <div class="divHover">
 
-                        @forelse($comments as $comment)
+                        @forelse($anime->user_comments as $comment)
                             <div class="row">
-                                <span>{{ $comment->fname }}</span>
                                 <div class="col-md-2">
                                     <img
                                         style="border-radius: 3px"
                                         width="100%"
-                                        src="{{ '/images/user_profile_img/' . $comment->profile_image }}"
+                                        src="{{ '/images/user_profile_img/' . $comment->user['profile_image'] }}"
                                         onError="this.onerror=null;this.src='https://picsum.photos/150';">
+
+                                    <span class="text-dark">{{ $comment->user['fname'] }}</span>
 
                                 </div>
                                 <div class="col-md-10">

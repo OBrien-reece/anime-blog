@@ -25,6 +25,10 @@ class Anime extends Model
         return $this->hasMany(ViewCounter::class);
     }
 
+    public function user_comments() {
+        return $this->hasMany(Comment::class);
+    }
+
     public function getRouteKeyName()
     {
         return 'slug';

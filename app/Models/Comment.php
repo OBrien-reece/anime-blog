@@ -14,4 +14,12 @@ class Comment extends Model
     protected $fillable = ['anime_id', 'comments', 'user_id'];
 
     public $timestamps = true;
+
+    public function anime() {
+        return $this->belongsTo(Anime::class);
+    }
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 }
