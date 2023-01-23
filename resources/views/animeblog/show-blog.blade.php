@@ -86,10 +86,11 @@
                                     </a>
                                 </li>
                                 <li style="color: red">
-                                    <form action="/blog/{{ $anime->slug }}" method="POST">
-{{--                                        @method('DELETE')--}}
+                                    <form action="/blog/{{ $anime->id }}" method="POST">
+                                        @method('DELETE')
                                         @csrf
                                             <button
+                                                onclick="myFunction()"
                                                 style="text-decoration:none;color: red"
                                                 class="btn btn-link">
                                                 Delete
@@ -181,3 +182,11 @@
 @include('layouts.footer')
 
 @endsection
+
+@push('scripts')
+    <script>
+        function myFunction() {
+            alert("Are you sure you want to delete this post.");
+        }
+    </script>
+@endpush

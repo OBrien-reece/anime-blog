@@ -115,6 +115,8 @@ class AnimeController extends Controller
             ]);
         }
 
+
+
         return redirect('/');
     }
 
@@ -218,6 +220,8 @@ class AnimeController extends Controller
      */
     public function destroy($id)
     {
-//        $data_to_be_deleted = Anime::find($id);
+        $data_to_be_deleted = Anime::find($id);
+        $data_to_be_deleted->delete();
+        return redirect('/');
     }
 }

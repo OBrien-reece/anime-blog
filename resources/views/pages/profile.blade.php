@@ -3,6 +3,14 @@
 @section('content')
 
     <div class="container">
+
+                    @if(Session::has('success'))
+                        <div class="col-md-4 m-auto alert alert-dismissible alert-danger">
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            Profile Image updated successfully
+                        </div>
+                    @endif
+
         <div class="col-md-9 mt-4 m-auto border-top border-bottom">
             <div class="row">
                 <div class="col-md-3 border-start" style="padding: 20px">

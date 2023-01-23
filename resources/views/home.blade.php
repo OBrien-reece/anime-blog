@@ -153,44 +153,18 @@
 
 
 
-       <div class="row" style="margin-top: 20px">
-           <div class="col-md-8">
-               <h3>One Piece</h3>
-               <p>Lorem ipsum dolor sit amet, consectetur adipisicing
-                   elit. Ad aut dolores, eius laboriosam laborum libero
-                   modi quibusdam saepe veniam. A beatae consectetur dolor
-                   ea earum molestias nostrum, quo ratione voluptatem?Lorem
-                   ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
-                   culpa delectus distinctio dolores doloribus dolorum earum ipsam
-                   iure magnam minus nihil numquam officiis recusandae repellat
-                   repellendus sit vero, voluptatem, voluptatibus?Lorem ipsum dolor
-                   sit amet, consectetur adipisicing elit. Animi dolorum exercitationem
-                   expedita fugiat illo ipsam, neque nisi nulla odit quam quia reprehenderit
-                   sunt suscipit. A ad consectetur facilis libero quod.</p>
+      {{-- <div class="row" style="margin-top: 20px">
+           <div class="col-md-6">
+               <span>Trending Ongoing anime blog</span>
            </div>
-           <div class="col-md-4">
-               <div class="jumbotron p-2 jumbotron-card">
-                   <h1 class="display-7">Characters</h1>
-                   <div class="row">
-                       <div class="col-md-4 pull-right">
-                           <img width="100px" height="70px" src="{{ URL('storage/luffy.jpg') }}" alt="">
-                       </div>
-                       <div class="col-md-8">
-                           <p>
-                               Monkey D. Luffy, also known as "Straw Hat" Luffy, is a fictional
-                               character and the main protagonist of the One Piece manga series, created by Eiichiro Oda.
-                           </p>
-                       </div>
-                       <hr class="hr-element-1">
-                   </div>
-                   </div>
-               </div>
+           <div class="col-md-6">
+               <span>Trending Completed anime blog</span>
            </div>
 
     <hr>
 
 
-       </div>
+       </div>--}}
 </div>
 
 </div>
