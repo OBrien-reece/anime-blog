@@ -228,32 +228,3 @@
     </div>
 @endsection
 
-@prepend('scripts')
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Summernote JS - CDN Link -->
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $("#your_summernote").summernote();
-            $('.dropdown-toggle').dropdown();
-            // var plainText = $($("#summernote").summernote("code")).text()
-        });
-        $('#your_summernote').summernote({
-            toolbar: [
-                ['style', ['style']],
-                ['fontsize', ['fontsize']],
-                ['font', ['bold', 'italic', 'underline', 'clear']],
-                ['fontname', ['fontname']],
-                ['color', ['color']],
-                ['para', ['ul', 'ol', 'paragraph']],
-                ['height', ['height']],
-                ['insert', ['picture', 'hr']],
-                ['table', ['table']]
-            ],
-            // height: 100,
-            focus: false
-        });
-    </script>
-@endprepend

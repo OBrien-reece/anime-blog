@@ -44,7 +44,8 @@ class CommentController extends Controller
 
         $blog_page = Anime::find($request->input('anime_id'));
 
-        return redirect('/blog/' . $blog_page->slug);
+        return redirect('/blog/' . $blog_page->slug)
+               ->with('success', 'Your comment has been posted, Scroll down to view...');;
     }
 
     /**

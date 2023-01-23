@@ -210,7 +210,8 @@ class AnimeController extends Controller
             ]);
         }
 
-        return redirect()->to('/blog/' . $update_data->slug);
+        return redirect()->to('/blog/' . $update_data->slug)
+            ->with('success', 'The changes to the blog have been registered successfully');
     }
     /**
      * Remove the specified resource from storage.

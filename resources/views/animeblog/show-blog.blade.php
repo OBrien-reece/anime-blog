@@ -3,6 +3,14 @@
 @section('content')
 
 <div class="container">
+
+        @if(Session::has('success'))
+            <div class="col-md-9 m-auto alert alert-dismissible alert-danger">
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                <span>{{ session('success') }}</span>
+            </div>
+        @endif
+
         <div class="row mt-3 border-top border-start border-end border-bottom">
             <div class="col-sm-3 col-md-3 mt-2">
                 <img
