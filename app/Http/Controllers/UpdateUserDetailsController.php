@@ -81,7 +81,7 @@ class UpdateUserDetailsController extends Controller
 
         $user_detail->save();
 
-        return redirect()->route('profile')->with('success', 'Blog Created successfully');
+        return redirect()->route('profile')->with('success', 'User Profile Updated successfully');
     }
 
     /**
