@@ -32,9 +32,9 @@ Route::get('/completed_anime_blogs', [ViewAllController::class, 'show_completed'
 
 Route::resource('/comment', CommentController::class);
 
-Route::get('/about', [PagesController::class, 'show_about']);
+Route::get('/about', [PagesController::class, 'show_about'])->name('about');
 
-Route::get('/contact_us', [PagesController::class, 'contact_us']);
+Route::get('/contact_us', [PagesController::class, 'contact_us'])->name('contact_us');
 
 Route::get('/my_profile', [PagesController::class, 'view_profile'])->name('profile');
 
