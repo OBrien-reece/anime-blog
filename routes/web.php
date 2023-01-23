@@ -38,4 +38,4 @@ Route::get('/contact_us', [PagesController::class, 'contact_us']);
 
 Route::get('/my_profile', [PagesController::class, 'view_profile'])->name('profile');
 
-Route::get('/update_profile', [PagesController::class, 'update_user_profile']);
+Route::resource('/user', 'App\Http\Controllers\PagesController');

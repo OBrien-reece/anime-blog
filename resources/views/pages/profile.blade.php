@@ -7,11 +7,17 @@
             <div class="row">
                 <div class="col-md-3 border-start" style="padding: 20px">
                     <img
-                        src="{{ asset('/images/user_profile_image' . $logged_in_user->profile_image) }}"
-                        onerror="this.src='https://picsum.photos/150';"
-                        style="border-radius: 50%">
+                        src="{{ '/images/user_profile_img/' . $logged_in_user->profile_image }}"
+                        onError="this.onerror=null;this.src='https://picsum.photos/150';"
+                         width="100%"
+                         class="rounded">
+
                     <div class="mt-4">
-                        <form action="" method="POST">
+                        <form
+                            enctype="multipart/form-data"
+                            action="/user/{{$logged_in_user['id']}}"
+                            method="POST">
+
                             @method('PUT')
                             @csrf
                             <input type="hidden" name="user_id" value="{{ $logged_in_user->id }}">
@@ -20,6 +26,7 @@
                                 <i class="fa fa-cloud-upload"></i> Edit profile image
                             </label>
                             <button
+                                type="submit"
                                 class="btn btn-link"
                                 style="color: purple;text-decoration: none">
                                 Update Profile Image

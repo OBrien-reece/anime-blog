@@ -24,14 +24,15 @@ class ValidateUserProfileImageRequest extends FormRequest
     public function rules()
     {
         return [
-            'image_profile' => 'image | max:2040'
+            'image_profile' => 'required | image | max:2040'
         ];
     }
 
     public function messages()
     {
         return [
-            'image_profile.image' => 'Please upload an image'
+            'image_profile.image' => 'Please upload an image',
+            'image_profile.required' => 'Submit an image first'
         ];
     }
 }

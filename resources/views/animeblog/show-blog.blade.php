@@ -127,14 +127,17 @@
                     <div class="divHover">
 
                         @forelse($comments as $comment)
-                            <div class="row"">
-                                <div class="col-md-1">
+                            <div class="row">
+                                <div class="col-md-2">
+
                                     <img
                                         style="border-radius: 3px"
-                                        src="https://picsum.photos/52"
-                                         alt="Image placeholder">
+                                        width="100%"
+                                        src="{{ '/images/user_profile_img/' . $comment->profile_image }}"
+                                        onError="this.onerror=null;this.src='https://picsum.photos/150';">
+
                                 </div>
-                                <div class="col-md-11">
+                                <div class="col-md-10">
                                 <span>
                                     {{ $comment->comments }}
                                 </span>

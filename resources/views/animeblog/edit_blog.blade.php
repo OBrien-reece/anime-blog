@@ -5,7 +5,11 @@
         <div class="row">
             <div class="col-md-9 m-auto mt-5" >
 
-                <form enctype="multipart/form-data" autocomplete="off" action="/blog/{{$anime['id']}}" method="POST">
+                <form
+                    enctype="multipart/form-data"
+                    autocomplete="off"
+                    action="/blog/{{$anime['id']}}"
+                    method="POST">
 
                     @method('PUT')
                     @csrf
