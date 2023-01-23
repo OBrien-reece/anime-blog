@@ -26,7 +26,7 @@ class Anime extends Model
     }
 
     public function user_comments() {
-        return $this->hasMany(Comment::class);
+        return $this->hasMany(Comment::class)->orderBy('created_at', 'desc');
     }
 
     public function getRouteKeyName()

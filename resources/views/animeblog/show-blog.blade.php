@@ -129,13 +129,13 @@
                         @forelse($anime->user_comments as $comment)
                             <div class="row">
                                 <div class="col-md-2">
+
+                                    <div class="image_rounded">
                                     <img
-                                        style="border-radius: 3px"
                                         width="100%"
                                         src="{{ '/images/user_profile_img/' . $comment->user['profile_image'] }}"
                                         onError="this.onerror=null;this.src='https://picsum.photos/150';">
-
-                                    <span class="text-dark">{{ $comment->user['fname'] }}</span>
+                                    </div>
 
                                 </div>
                                 <div class="col-md-10">
