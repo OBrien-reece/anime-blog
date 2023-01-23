@@ -128,8 +128,8 @@
 
                         @forelse($comments as $comment)
                             <div class="row">
+                                <span>{{ $comment->fname }}</span>
                                 <div class="col-md-2">
-
                                     <img
                                         style="border-radius: 3px"
                                         width="100%"

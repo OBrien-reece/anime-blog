@@ -36,14 +36,15 @@
                 </div>
                 <div class="col-md-9 border-end" style="padding: 20px">
                     <span style="font-size: 30px" class="border-bottom">My profile</span>
-                    <form action="">
+                    <form action="/details/{{ $logged_in_user->id }}" method="POST">
+                        @method('PUT')
+                        @csrf
                         <div class="form-group">
                             <label>First Name</label>
                             <input
                                 type="text"
                                 name="fname"
                                 class="form-control"
-                                readonly
                                 value="{{$logged_in_user['fname']}}">
                         </div>
                         <div class="form-group">
@@ -52,7 +53,6 @@
                                 type="text"
                                 name="lname"
                                 class="form-control"
-                                readonly
                                 value="{{$logged_in_user['lname']}}">
                         </div>
                         <div class="form-group">
@@ -61,7 +61,6 @@
                                 type="email"
                                 name="email"
                                 class="form-control"
-                                readonly
                                 value="{{$logged_in_user['email']}}">
                         </div>
                         <div class="text-center">

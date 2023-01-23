@@ -134,10 +134,11 @@ class AnimeController extends Controller
         $comments = \DB::table('users')
                      ->join('anime', 'users.id', 'anime.user_id')
                      ->leftJoin('comments', 'anime.id', 'comments.anime_id')
-                     ->select('users.fname', 'users.profile_image', 'users.lname', 'anime.*', 'comments.*')
-                     ->where('anime.id', '=' , $idn)
+                     ->select('users.fname', 'users.profile_image', 'users.lname', 'anime.id', 'comments.*')
+                     ->where('anime.id', $idn)
                      ->orderByDesc('comments.created_at')
                      ->get();
+//        dd($comments);
 
         return view('animeblog.show-blog', [
             'anime' => $anime,
