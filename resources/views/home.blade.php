@@ -13,6 +13,12 @@
 <div class="container wrapper">
 
       <div>
+          @if(Session::has('success'))
+              <div class="col-md-6 m-auto alert alert-dismissible alert-danger">
+                  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                  <span>{{ session('success') }}</span>
+              </div>
+          @endif
           <img src="{{ URL('images/img/canvas.png') }}" height="60%" alt="" class="background-img">
 
           <div class="left-centered" style="margin-left: 80px;margin-top: 40px">

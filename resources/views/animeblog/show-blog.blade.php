@@ -98,7 +98,7 @@
                                         @method('DELETE')
                                         @csrf
                                             <button
-                                                onclick="myFunction()"
+                                                onclick="return confirm('Delete entry')"
                                                 style="text-decoration:none;color: red"
                                                 class="btn btn-link">
                                                 Delete
@@ -194,7 +194,7 @@
 @push('scripts')
     <script>
         function myFunction() {
-            alert("Are you sure you want to delete this post.");
+            alert("Are you sure you want to delete this post. If not, press esc");
         }
     </script>
 @endpush

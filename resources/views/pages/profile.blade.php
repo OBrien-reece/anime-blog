@@ -1,5 +1,20 @@
 @extends('layouts.app')
 
+@prepend('styles')
+    <style>
+        /*custom file uplad button*/
+        input[type="file"] {
+            display: none;
+        }
+        .custom-file-upload {
+            border: 1px solid #ccc;
+            display: inline-block;
+            padding: 6px 12px;
+            cursor: pointer;
+        }
+    </style>
+@endprepend
+
 @section('content')
 
     <div class="container">

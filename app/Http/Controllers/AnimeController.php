@@ -115,9 +115,12 @@ class AnimeController extends Controller
             ]);
         }
 
+        $slug = Anime::where('id', $anime_id)->select('slug')->limit(1)->first();
 
 
-        return redirect('/');
+
+        return redirect('/blog/' . $slug['slug'])
+            ->with('success', 'Blog created successfully');
     }
 
     /**
@@ -223,6 +226,7 @@ class AnimeController extends Controller
     {
         $data_to_be_deleted = Anime::find($id);
         $data_to_be_deleted->delete();
-        return redirect('/');
+        return redirect('/')
+            ->with('success', 'The blog has been deleted');;
     }
 }
