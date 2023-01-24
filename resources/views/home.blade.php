@@ -21,7 +21,7 @@
           @endif
           <img src="{{ URL('images/img/canvas.png') }}" height="60%" alt="" class="background-img">
 
-          <div class="left-centered" style="margin-left: 80px;margin-top: 40px">
+          <di{{--v class="left-centered" style="margin-left: 80px;margin-top: 40px">
               <div>
                   <strong>
                           <h1 class="text-uppercase image-text anime-text">9anime : anime blog site</h1>
@@ -46,7 +46,7 @@
                       </h6>
               </div>
           </div>
-
+--}}
 
 
           <div class="mt-1 border-bottom border-end border-top border-start" style="border-radius: 3px">

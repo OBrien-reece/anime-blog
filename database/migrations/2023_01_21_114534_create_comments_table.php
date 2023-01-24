@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedInteger('anime_id');
             $table->unsignedInteger('user_id');
-            $table->string('comments');
+            $table->longText('comments');
             $table->timestamps();
             $table->foreign('anime_id')->references('id')->on('anime')->cascadeOnDelete();
             $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();

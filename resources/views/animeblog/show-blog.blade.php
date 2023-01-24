@@ -148,6 +148,10 @@
 
                                 </div>
                                 <div class="col-md-10">
+                                    <small>
+                                        <code>{{ $comment->user['fname'] . ' ' . $comment->user['lname']}}</code>
+                                    </small>
+                                    <br>
                                 <span>
                                     {{ $comment->comments }}
                                 </span>
