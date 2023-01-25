@@ -123,7 +123,7 @@
                     {{ $anime['blog_title'] }}
                 </h2>
 
-                <p>{!! $anime['description'] !!}</p>
+                <p>{!! \Stevebauman\Purify\Facades\Purify::clean($anime['description']) !!}</p>
 
             </div>
         </div>
