@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 25, 2023 at 10:41 AM
+-- Generation Time: Jan 30, 2023 at 07:36 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -130,7 +130,8 @@ INSERT INTO `comments` (`id`, `anime_id`, `user_id`, `comments`, `created_at`, `
 (13, 2, 4, 'Shiganshina District arc was the best arc in anime history for me', '2023-01-25 03:14:53', '2023-01-25 03:14:53'),
 (14, 3, 4, 'Kirito was just a somewhat overpowered protagonist.', '2023-01-25 03:15:23', '2023-01-25 03:15:23'),
 (15, 4, 4, 'OMG, Ms Makina is evil! The Plot thickens', '2023-01-25 03:15:54', '2023-01-25 03:15:54'),
-(16, 7, 5, 'I liked Rezero so much. The romance between subaru and Ram was so electrifying', '2023-01-25 03:20:01', '2023-01-25 03:20:01');
+(16, 7, 5, 'I liked Rezero so much. The romance between subaru and Ram was so electrifying', '2023-01-25 03:20:01', '2023-01-25 03:20:01'),
+(17, 12, 4, 'Saitama is the ultimate GOAT. His power is just ridiculously amazing. Love the guy', '2023-01-25 09:11:26', '2023-01-25 09:11:26');
 
 -- --------------------------------------------------------
 
@@ -276,7 +277,7 @@ INSERT INTO `view_counter` (`id`, `anime_id`, `view_counter`) VALUES
 (9, 9, 3),
 (10, 10, 11),
 (11, 11, 1),
-(12, 12, 1),
+(12, 12, 5),
 (13, 13, 5);
 
 --
@@ -365,7 +366,7 @@ ALTER TABLE `blog_information`
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
