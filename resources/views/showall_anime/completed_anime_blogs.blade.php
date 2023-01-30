@@ -8,7 +8,13 @@
                 <div class="col-md-12">
                     <div class="border-bottom">
                         <div style="font-family: Times New Roman, SansSerif;font-size: medium">
-                            <span style="color: purple">Ongoing Anime Blogs</span>
+                            <span style="color: purple">Completed Anime Blogs</span>
+                            <span style="color: purple;float: right">
+                                <a href="{{ route('ongoing') }}">
+                                    Ongoing Anime Blogs
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </a>
+                            </span>
                         </div>
                     </div>
 
@@ -30,7 +36,7 @@
                                                 <h4 style="font-family: 'Times New Roman';color: purple">
                                                     {{ $completed->anime_title }}
                                                 </h4>
-                                                <span style="font-family: 'Times New Roman'">
+                                                <span style="font-family: 'Times New Roman';color: rebeccapurple">
                                                 {{ $completed->blog_title }}
                                             </span>
                                             </div>
@@ -52,6 +58,11 @@
                 </div>
             </div>
         </div>
+
+        <div class="mt-2 mb-4">
+            {{ $completed_anime->links('pagination::bootstrap-5') }}
+        </div>
+
     </div>
 
 
